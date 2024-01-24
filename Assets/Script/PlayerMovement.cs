@@ -40,18 +40,22 @@ public class PlayerMovement : MonoBehaviour
     {
         if(bJump)
         {
-            direction = direction * jump;
-            rigidbody.AddForce(direction);
+
+            rigidbody.AddForce(direction * jump, ForceMode2D.Impulse);
             bJump = false;
-            rigidbody.gravityScale = 20.0f;
+            rigidbody.gravityScale = 10.0f;
         }
     }
 
     private void ApplyMovment(Vector2 direction)
     {
-        direction.x = direction.x * 10; 
+        var velocity = rigidbody.velocity;
+        velocity.x = direction.x * 10; // x 속도 적용
 
-        rigidbody.velocity = direction;
+        // 유지되는 y 속도
+        velocity.y = rigidbody.velocity.y;
+
+        rigidbody.velocity = velocity;
     }
 
 
