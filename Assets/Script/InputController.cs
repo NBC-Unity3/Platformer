@@ -27,8 +27,6 @@ public class InputController : MonoBehaviour
 
     public void OnJump(InputValue value)
     {
-        //Vector3 jumpInput = value.Get<Vector3>();
-        //CallJumpEvent(jumpInput);
 
         Vector3 jumpInput = Vector3.up;
         CallJumpEvent(jumpInput);

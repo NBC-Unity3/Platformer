@@ -29,8 +29,6 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         ApplyMovment(movementDirection);
-
-
     }
 
     private void Move(Vector2 direction)
@@ -42,19 +40,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if(bJump)
         {
-            rigidbody.AddForce(direction * jump);
+            direction = direction * jump;
+            rigidbody.AddForce(direction);
             bJump = false;
-            rigidbody.gravityScale = 15.0f;
+            rigidbody.gravityScale = 20.0f;
         }
     }
 
     private void ApplyMovment(Vector2 direction)
     {
-        direction.x = direction.x * 10; //만약 스테이터스가 생기면 여기 수정 (SSS)
+        direction.x = direction.x * 10; 
 
         rigidbody.velocity = direction;
     }
-
 
 
     private void OnCollisionEnter2D(Collision2D collision)
