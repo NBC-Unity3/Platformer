@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] protected bool bJump;
 
     private Vector2 movementDirection = Vector3.zero;
+    SpriteRenderer sprite;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         playerMove.OnMoveEvent += Move;
         playerMove.OnJumpEvent += Jump;
         bJump = false;
+        sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     void FixedUpdate()
@@ -65,11 +67,11 @@ public class PlayerMovement : MonoBehaviour
         //스프라이트 반전
         if (velocity.x < 0)
         {
-            GetComponentInChildren<SpriteRenderer>().flipX = true;
+            sprite.flipX = true;
         }
         else
         {
-            GetComponentInChildren<SpriteRenderer>().flipX = false;
+            sprite.flipX = false;
         }
     }
 
