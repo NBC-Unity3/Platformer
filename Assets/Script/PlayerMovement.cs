@@ -59,8 +59,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (bJump) return;
-        Invoke("JumpOn", 0.05f);
+        if(collision.gameObject.CompareTag("JumpGround"))
+        {
+            if (bJump) return;
+            Invoke("JumpOn", 0.05f);
+        }
+        
     }
 
     private void JumpOn()

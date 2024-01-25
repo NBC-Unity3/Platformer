@@ -12,4 +12,8 @@ public class PlayerColision : MonoBehaviour
     }
 
 
+    void PlayerDie()
+    {
+        Destroy(gameObject);
+    }
 }
