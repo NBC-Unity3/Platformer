@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public int speed;
-    public float jump;
+    [SerializeField] protected int speed;
+    [SerializeField] protected float jump;
 
-    InputController playerMove;
-    private Rigidbody2D rigidbody;
+    protected InputController playerMove;
+    [HideInInspector] protected Rigidbody2D rigidbody;
+
+    [HideInInspector] protected bool bJump;
+    [HideInInspector] protected bool bMove;
 
     private Vector2 movementDirection = Vector3.zero;
-    bool bJump;
 
     private void Awake()
     {
@@ -24,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         playerMove.OnMoveEvent += Move;
         playerMove.OnJumpEvent += Jump;
         bJump = false;
+        bMove = false;
     }
 
     void FixedUpdate()
@@ -49,26 +52,15 @@ public class PlayerMovement : MonoBehaviour
     {
         var velocity = rigidbody.velocity;
         velocity.x = direction.x * 10; // x 속도 적용
-
-        // 유지되는 y 속도
         velocity.y = rigidbody.velocity.y;
-
         rigidbody.velocity = velocity;
+        //if (bMove)
+        //{
+        //    var velocity = rigidbody.velocity;
+        //    velocity.x = direction.x * 10; // x 속도 적용
+        //    velocity.y = rigidbody.velocity.y;
+        //    rigidbody.velocity = velocity;
+        //}
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("JumpGround"))
-        {
-            if (bJump) return;
-            Invoke("JumpOn", 0.05f);
-        }
-        
-    }
-
-    private void JumpOn()
-    {
-        bJump = true;
-    }
 }
