@@ -12,15 +12,8 @@ public class PlayerColntroller : PlayerMovement
         {
             if (bJump) return;
 
-            bMove = true;
             Invoke("JumpOn", 0.05f);
         }
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            bMove = false;
-            //rigidbody.velocity = Vector2.zero;
-        }
-
 
     }
 
@@ -29,10 +22,7 @@ public class PlayerColntroller : PlayerMovement
         bJump = true;
     }
 
-    private void MoveOn()
-    {
-        bMove = true;
-    }
+
 
     void PlayerDie()
     {

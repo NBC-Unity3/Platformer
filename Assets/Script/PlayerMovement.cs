@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     [SerializeField] protected int speed;
     [SerializeField] protected float jump;
 
@@ -11,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] protected Rigidbody2D rigidbody;
 
     [HideInInspector] protected bool bJump;
-    [HideInInspector] protected bool bMove;
 
     private Vector2 movementDirection = Vector3.zero;
 
@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
         playerMove.OnMoveEvent += Move;
         playerMove.OnJumpEvent += Jump;
         bJump = false;
-        bMove = false;
     }
 
     void FixedUpdate()
@@ -51,16 +50,28 @@ public class PlayerMovement : MonoBehaviour
     private void ApplyMovment(Vector2 direction)
     {
         var velocity = rigidbody.velocity;
+        if (direction.x == 0)
+        {
+            velocity.x = 0;
+            rigidbody.velocity = velocity;
+            return;
+        }
+
+
         velocity.x = direction.x * 10; // x 속도 적용
         velocity.y = rigidbody.velocity.y;
         rigidbody.velocity = velocity;
-        //if (bMove)
-        //{
-        //    var velocity = rigidbody.velocity;
-        //    velocity.x = direction.x * 10; // x 속도 적용
-        //    velocity.y = rigidbody.velocity.y;
-        //    rigidbody.velocity = velocity;
-        //}
+
+        //스프라이트 반전
+        if (velocity.x < 0)
+        {
+            GetComponentInChildren<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            GetComponentInChildren<SpriteRenderer>().flipX = false;
+        }
     }
+
 
 }
