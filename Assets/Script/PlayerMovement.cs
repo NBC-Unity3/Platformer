@@ -40,10 +40,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if(bJump)
         {
-
-            rigidbody.AddForce(direction * jump, ForceMode2D.Impulse);
             bJump = false;
-            rigidbody.gravityScale = 10.0f;
+            rigidbody.AddForce(direction * jump, ForceMode2D.Impulse);
         }
     }
 
@@ -61,7 +59,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (bJump) return;
+        Invoke("JumpOn", 0.05f);
+    }
+
+    private void JumpOn()
+    {
         bJump = true;
-        rigidbody.gravityScale = 1.0f;
     }
 }
