@@ -12,16 +12,10 @@ public class PlayerColntroller : PlayerMovement
         {
             if (bJump) return;
 
-            Invoke("JumpOn", 0.05f);
+            bJump = true;
         }
 
     }
-
-    private void JumpOn()
-    {
-        bJump = true;
-    }
-
 
 
     void PlayerDie()
