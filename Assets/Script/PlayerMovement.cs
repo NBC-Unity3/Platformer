@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] protected float jump;
 
     protected InputController playerMove;
-    [HideInInspector] protected Rigidbody2D rigidbody;
+    [HideInInspector] protected Rigidbody2D _rigidbody;
 
     [HideInInspector] protected bool bJump;
 
@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         playerMove = GetComponent<InputController>();
-        rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     void Start()
@@ -45,24 +45,24 @@ public class PlayerMovement : MonoBehaviour
         if(bJump)
         {
             bJump = false;
-            rigidbody.AddForce(direction * jump, ForceMode2D.Impulse);
+            _rigidbody.AddForce(direction * jump, ForceMode2D.Impulse);
         }
     }
 
     private void ApplyMovment(Vector2 direction)
     {
-        var velocity = rigidbody.velocity;
+        var velocity = _rigidbody.velocity;
         if (direction.x == 0)
         {
             velocity.x = 0;
-            rigidbody.velocity = velocity;
+            _rigidbody.velocity = velocity;
             return;
         }
 
 
         velocity.x = direction.x * 10; // x �ӵ� ����
-        velocity.y = rigidbody.velocity.y;
-        rigidbody.velocity = velocity;
+        velocity.y = _rigidbody.velocity.y;
+        _rigidbody.velocity = velocity;
 
         //��������Ʈ ����
         if (velocity.x < 0)
