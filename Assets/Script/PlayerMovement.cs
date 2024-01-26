@@ -16,10 +16,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movementDirection = Vector3.zero;
     SpriteRenderer sprite;
 
+    AudioManager audioManager;
+
     private void Awake()
     {
         playerMove = GetComponent<InputController>();
         rigidbody = GetComponent<Rigidbody2D>();
+        
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     void Start()
@@ -44,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(bJump)
         {
+            audioManager.PlaySFX(audioManager.jumpClip);
             bJump = false;
             rigidbody.AddForce(direction * jump, ForceMode2D.Impulse);
         }

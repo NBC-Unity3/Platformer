@@ -1,0 +1,46 @@
+{
+    "name": "UI",
+    "maps": [
+        {
+            "name": "UISettings",
+            "id": "307ce615-ab0d-44cf-805a-41cdfecfffc2",
+            "actions": [
+                {
+                    "name": "Settings",
+                    "type": "Button",
+                    "id": "c714f456-4d31-4a2c-b984-83fcc024b33c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8f9071f5-2654-4358-9d1c-a602f3e7501c",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Settings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "New control scheme",
+            "bindingGroup": "New control scheme",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

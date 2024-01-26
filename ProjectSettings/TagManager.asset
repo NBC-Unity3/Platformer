@@ -6,6 +6,7 @@ TagManager:
   tags:
   - JumpGround
   - Ground
+  - Audio
   layers:
   - Default
   - TransparentFX
