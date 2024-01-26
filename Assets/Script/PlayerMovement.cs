@@ -8,10 +8,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] protected int speed;
     [SerializeField] protected float jump;
 
+    public float limitVelocityY = -2; 
     protected InputController playerMove;
-    [HideInInspector] protected Rigidbody2D rigidbody;
+    protected Rigidbody2D rigidbody;
 
-    [HideInInspector] protected bool bJump;
+    protected bool JumpOn;
+    protected bool Secondjump;
 
     private Vector2 movementDirection = Vector3.zero;
     SpriteRenderer sprite;
@@ -26,7 +28,8 @@ public class PlayerMovement : MonoBehaviour
     {
         playerMove.OnMoveEvent += Move;
         playerMove.OnJumpEvent += Jump;
-        bJump = false;
+        JumpOn = false;
+        Secondjump = false;
         sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
@@ -42,16 +45,35 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump(Vector3 direction)
     {
-        if(bJump)
+        if (JumpOn) 
         {
-            bJump = false;
+            JumpOn = false;
+            Secondjump = true;
             rigidbody.AddForce(direction * jump, ForceMode2D.Impulse);
         }
+        else if(Secondjump)
+        {
+            Secondjump = false;
+            var velocity = rigidbody.velocity;
+            velocity.y = 0;
+            rigidbody.velocity = velocity;
+            rigidbody.AddForce(direction * (jump-5), ForceMode2D.Impulse);
+        }
     }
+
+
 
     private void ApplyMovment(Vector2 direction)
     {
         var velocity = rigidbody.velocity;
+        
+        if(velocity.y < limitVelocityY)
+        {
+            velocity.y = limitVelocityY;
+        }
+
+
+
         if (direction.x == 0)
         {
             velocity.x = 0;
