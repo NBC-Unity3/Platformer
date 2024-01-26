@@ -171,4 +171,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8bd3283906f9a468d984dd4e4d034f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 1331889127661902528, guid: 528c79d4292d7fe44a8d0da12e1bde7a, type: 3}
+  randomMin: -8.5
+  randomMax: -3.5

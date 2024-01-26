@@ -13,7 +13,7 @@ public class Bed : MonoBehaviour
         {
             //TODO
 
-            //애니메이션 등
+            
             Panel.SetActive(true);
             Invoke("LoadSleepScene", 3f);
         }
