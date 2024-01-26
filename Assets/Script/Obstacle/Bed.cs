@@ -15,12 +15,12 @@ public class Bed : MonoBehaviour
 
             //애니메이션 등
             Panel.SetActive(true);
-            Invoke("LoadDeadScene", 3f);
+            Invoke("LoadSleepScene", 3f);
         }
     }
 
-    private void LoadDeadScene()
+    private void LoadSleepScene()
     {
-        SceneManager.LoadScene("DeadScene");
+        SceneManager.LoadScene("SleepScene");
     }
 }

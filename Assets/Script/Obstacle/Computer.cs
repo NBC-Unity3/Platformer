@@ -14,19 +14,16 @@ public class Computer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Ground")
+        if (coll.gameObject.tag == "Ground" || coll.gameObject.tag == "Player")
         {
             Destroy(gameObject);
+
+            if (coll.gameObject.tag == "Player")
+            {
+                //TODO
+            }                
         }        
-        else if (coll.gameObject.tag == "Player")
-        {
-            //TODO
-            
-            
-        }
     }
-
-
 }
 
 

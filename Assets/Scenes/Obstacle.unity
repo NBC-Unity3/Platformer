@@ -549,7 +549,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -716,6 +716,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2756879166061118744, guid: 7205551ea1216704aa6124a8fcd851b1, type: 3}
+      propertyPath: Obstacle
+      value: 
+      objectReference: {fileID: 4822655982722234984, guid: a0c25197a139cf04bb6817816950fd6c, type: 3}
     - target: {fileID: 8972844967193861930, guid: 7205551ea1216704aa6124a8fcd851b1, type: 3}
       propertyPath: m_Name
       value: TriggerObject
@@ -733,9 +737,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4777275683863890540, guid: 528c79d4292d7fe44a8d0da12e1bde7a, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5228377460817355901, guid: 528c79d4292d7fe44a8d0da12e1bde7a, type: 3}
       propertyPath: m_Name
       value: Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365137251167076144, guid: 528c79d4292d7fe44a8d0da12e1bde7a, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9004293572163235775, guid: 528c79d4292d7fe44a8d0da12e1bde7a, type: 3}
       propertyPath: m_Pivot.x
@@ -771,6 +783,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9004293572163235775, guid: 528c79d4292d7fe44a8d0da12e1bde7a, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004293572163235775, guid: 528c79d4292d7fe44a8d0da12e1bde7a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004293572163235775, guid: 528c79d4292d7fe44a8d0da12e1bde7a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004293572163235775, guid: 528c79d4292d7fe44a8d0da12e1bde7a, type: 3}
+      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9004293572163235775, guid: 528c79d4292d7fe44a8d0da12e1bde7a, type: 3}
