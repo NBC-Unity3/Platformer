@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
             var velocity = rigidbody.velocity;
             velocity.y = 0;
             rigidbody.velocity = velocity;
-            rigidbody.AddForce(direction * (jump-5), ForceMode2D.Impulse);
+            rigidbody.AddForce(direction * (jump-3), ForceMode2D.Impulse);
         }
     }
 
