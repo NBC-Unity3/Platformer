@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public int speed;
-    public float jump;
 
-    InputController playerMove;
-    private Rigidbody2D rigidbody;
+    [SerializeField] protected int speed;
+    [SerializeField] protected float jump;
+
+    protected InputController playerMove;
+    [HideInInspector] protected Rigidbody2D rigidbody;
+
+    [HideInInspector] protected bool bJump;
 
     private Vector2 movementDirection = Vector3.zero;
-    bool bJump;
+    SpriteRenderer sprite;
 
     private void Awake()
     {
@@ -24,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         playerMove.OnMoveEvent += Move;
         playerMove.OnJumpEvent += Jump;
         bJump = false;
+        sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     void FixedUpdate()
@@ -40,28 +44,36 @@ public class PlayerMovement : MonoBehaviour
     {
         if(bJump)
         {
-
-            rigidbody.AddForce(direction * jump, ForceMode2D.Impulse);
             bJump = false;
-            rigidbody.gravityScale = 10.0f;
+            rigidbody.AddForce(direction * jump, ForceMode2D.Impulse);
         }
     }
 
     private void ApplyMovment(Vector2 direction)
     {
         var velocity = rigidbody.velocity;
+        if (direction.x == 0)
+        {
+            velocity.x = 0;
+            rigidbody.velocity = velocity;
+            return;
+        }
+
+
         velocity.x = direction.x * 10; // x 속도 적용
-
-        // 유지되는 y 속도
         velocity.y = rigidbody.velocity.y;
-
         rigidbody.velocity = velocity;
+
+        //스프라이트 반전
+        if (velocity.x < 0)
+        {
+            sprite.flipX = true;
+        }
+        else
+        {
+            sprite.flipX = false;
+        }
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        bJump = true;
-        rigidbody.gravityScale = 1.0f;
-    }
 }
