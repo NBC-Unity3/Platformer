@@ -8,10 +8,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] protected int speed;
     [SerializeField] protected float jump;
 
+    public float limitVelocityY = -2; 
     protected InputController playerMove;
-    [HideInInspector] protected Rigidbody2D _rigidbody;
+    protected Rigidbody2D rigidbody;
 
-    [HideInInspector] protected bool bJump;
+    protected bool JumpOn;
+    protected bool Secondjump;
 
     private Vector2 movementDirection = Vector3.zero;
     SpriteRenderer sprite;
@@ -19,14 +21,15 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         playerMove = GetComponent<InputController>();
-        _rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody = GetComponent<Rigidbody2D>();
     }
 
     void Start()
     {
         playerMove.OnMoveEvent += Move;
         playerMove.OnJumpEvent += Jump;
-        bJump = false;
+        JumpOn = false;
+        Secondjump = false;
         sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
@@ -42,29 +45,48 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump(Vector3 direction)
     {
-        if(bJump)
+        if (JumpOn) 
         {
-            bJump = false;
-            _rigidbody.AddForce(direction * jump, ForceMode2D.Impulse);
+            JumpOn = false;
+            Secondjump = true;
+            rigidbody.AddForce(direction * jump, ForceMode2D.Impulse);
+        }
+        else if(Secondjump)
+        {
+            Secondjump = false;
+            var velocity = rigidbody.velocity;
+            velocity.y = 0;
+            rigidbody.velocity = velocity;
+            rigidbody.AddForce(direction * (jump-5), ForceMode2D.Impulse);
         }
     }
 
+
+
     private void ApplyMovment(Vector2 direction)
     {
-        var velocity = _rigidbody.velocity;
+        var velocity = rigidbody.velocity;
+        
+        if(velocity.y < limitVelocityY)
+        {
+            velocity.y = limitVelocityY;
+        }
+
+
+
         if (direction.x == 0)
         {
             velocity.x = 0;
-            _rigidbody.velocity = velocity;
+            rigidbody.velocity = velocity;
             return;
         }
 
 
-        velocity.x = direction.x * 10; // x ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½
-        velocity.y = _rigidbody.velocity.y;
-        _rigidbody.velocity = velocity;
+        velocity.x = direction.x * 10; // x ¼Óµµ Àû¿ë
+        velocity.y = rigidbody.velocity.y;
+        rigidbody.velocity = velocity;
 
-        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+        //½ºÇÁ¶óÀÌÆ® ¹ÝÀü
         if (velocity.x < 0)
         {
             sprite.flipX = true;
