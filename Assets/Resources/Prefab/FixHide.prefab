@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1901161689127572148}
   - component: {fileID: 5158523390359093348}
   m_Layer: 0
-  m_Name: BedFIxMode
+  m_Name: FixHide
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

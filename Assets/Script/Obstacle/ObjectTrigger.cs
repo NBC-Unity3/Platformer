@@ -17,7 +17,9 @@ public class ObjectTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        if (myObstacle.choice == ModeChoice.Mode.Drop)
+        if (myObstacle.choice == ModeChoice.Mode.Drop ||
+            myObstacle.choice == ModeChoice.Mode.Fly ||
+            myObstacle.choice == ModeChoice.Mode.Hide)
         {
             if (myObstacle.choiceObject.activeSelf == false)
                 myObstacle.choiceObject.SetActive(true);
