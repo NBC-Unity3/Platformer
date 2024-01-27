@@ -17,12 +17,18 @@ public class ObjectTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        if (myObstacle.choice == ModeChoice.Mode.Drop ||
-            myObstacle.choice == ModeChoice.Mode.Fly ||
-            myObstacle.choice == ModeChoice.Mode.Hide)
+        if (myObstacle.choice == ModeChoice.Mode.Hide)
         {
             if (myObstacle.choiceObject.activeSelf == false)
                 myObstacle.choiceObject.SetActive(true);
+            myObstacle.triggerObject.SetActive(false);
+        }
+
+        if (myObstacle.choice == ModeChoice.Mode.Drop ||
+            myObstacle.choice == ModeChoice.Mode.Fly)
+        {
+            if (myObstacle.choiceObject.activeSelf == false)
+                Invoke("WaitDrop", myObstacle.wait);
             myObstacle.triggerObject.SetActive(false);
         }
 
@@ -43,5 +49,10 @@ public class ObjectTrigger : MonoBehaviour
         float x = Random.Range(-8.5f, -2.5f);// 값조절
         myObstacle.choiceObject.transform.position = new Vector3(x, 5f, 0);
         Instantiate(myObstacle.choiceObject);
+    }
+
+    public void WaitDrop()
+    {
+        myObstacle.choiceObject.SetActive(true);
     }
 }

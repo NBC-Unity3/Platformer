@@ -8,6 +8,7 @@ public class ModeChoice : MonoBehaviour
     public GameObject choiceObject;
     public GameObject triggerObject;
     public float gravity;
+    public float wait = 0f;
     private Rigidbody2D _rigidbody2D;
 
 
