@@ -23,6 +23,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private Slider sfxSlider;
     [SerializeField] private Slider masterSlider;
 
+    private bool masterMute = false;
+    private bool bgmMute = false;
+    private bool sfxMute = false;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +60,46 @@ public class AudioManager : MonoBehaviour
     {
         float volume = masterSlider.value;
         mixer.SetFloat("Master", Mathf.Log10(volume) * 20);
+    }
+
+    public void MuteMasterVolume()
+    {
+        if (!masterMute)
+        {
+            masterMute = true;
+            mixer.SetFloat("Master", -80.0f);
+        }
+        else
+        {
+            masterMute = false;
+            SetMasterVolume();
+        }
+    }
+    public void MuteBGMVolume()
+    {
+        if (!bgmMute)
+        {
+            bgmMute = true;
+            mixer.SetFloat("BGM", -80.0f);
+        }
+        else
+        {
+            bgmMute = false;
+            SetBGMVolume();
+        }
+    }
+    public void MuteSFXVolume()
+    {
+        if (!masterMute)
+        {
+            sfxMute = true;
+            mixer.SetFloat("SFX", -80.0f);
+        }
+        else
+        {
+            sfxMute = false;
+            SetSFXVolume();
+        }
     }
 
     // Update is called once per frame
