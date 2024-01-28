@@ -16,10 +16,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject time;
     [SerializeField] GameObject item;
     [SerializeField] GameObject settings;
+    [SerializeField] GameObject result;
     [SerializeField] GameObject goal;
     [SerializeField] GameObject player;
+    
     private float distance;
-
+    private float max_distance;
 
     private bool isPause = false;
     private float setTime;
@@ -27,33 +29,31 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         setTime = 540.0f;
+        max_distance = Vector3.Distance(player.transform.position, goal.transform.position);
     }
-
-    // Update is called once per frame
 
     void Update()
     {
-        distanceTxt.text = Vector3.Distance(player.transform.position, goal.transform.position).ToString("F2");
-        //너무 느림
+        //거리UI 업데이트
+        distance = Mathf.Ceil((max_distance - Vector3.Distance(player.transform.position, goal.transform.position)) * 100 / max_distance);
+        distanceTxt.text = distance.ToString("F0") + "%";
+        
+        //시간UI 업데이트
         if (setTime < 1260.0f)
         {
-            setTime += Time.deltaTime;
-            setTime += Time.deltaTime;
-            setTime += Time.deltaTime;
-            setTime += Time.deltaTime;
-            setTime += Time.deltaTime;
-            setTime += Time.deltaTime;
-            setTime += Time.deltaTime;
-            setTime += Time.deltaTime;
-            setTime += Time.deltaTime;
+            setTime += Time.deltaTime * 20;
         }
 
         else if (setTime > 1260.0f)
+        {
             Time.timeScale = 0.0f;
+            result.SetActive(true);
+        }
         setTimeTxt.text = Mathf.Floor(setTime / 60f).ToString().PadLeft(2, '0') + 
-            " : " + 
+            ":" + 
             Mathf.Floor(setTime % 60f).ToString().PadLeft(2, '0');
-        Console.WriteLine("onESC");
+        
+        //ESC 키다운시 설정
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             isPause = !isPause;
@@ -69,17 +69,6 @@ public class UIManager : MonoBehaviour
             }
             Time.fixedDeltaTime = 0.02f * Time.timeScale;
         }
-    }
-
-
-
-    public void goalDistance()
-    {
-    }
-
-    public void CountDown()
-    {
-
     }
 
     public void sceneChangeBtn(string scene)
@@ -98,4 +87,5 @@ public class UIManager : MonoBehaviour
     {
 
     }
+
 }
