@@ -6,21 +6,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using static UnityEngine.EventSystems.EventTrigger;
 public class UIManager : MonoBehaviour
 {
     [Header ("UI")]
     [SerializeField] TextMeshProUGUI setTimeTxt;
-    [SerializeField] Text rightTime;
+    [SerializeField] TextMeshProUGUI distanceTxt;
 
     [SerializeField] GameObject time;
     [SerializeField] GameObject item;
     [SerializeField] GameObject settings;
+    [SerializeField] GameObject goal;
+    [SerializeField] GameObject player;
+    private float distance;
 
-    //public InputAction escapeControl;
-    // Start is called before the first frame update
 
     private bool isPause = false;
-    public float setTime;
+    private float setTime;
 
     void Start()
     {
@@ -31,7 +33,8 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        Console.WriteLine(setTime);
+        distanceTxt.text = Vector3.Distance(player.transform.position, goal.transform.position).ToString("F2");
+        //너무 느림
         if (setTime < 1260.0f)
         {
             setTime += Time.deltaTime;
@@ -68,9 +71,10 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void goaldistance()
+
+
+    public void goalDistance()
     {
-        
     }
 
     public void CountDown()
