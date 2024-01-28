@@ -34,6 +34,8 @@ public class AudioManager : MonoBehaviour
     //isJump()등에서 액세스 하게끔 pulibc화
     public void PlaySFX(AudioClip clip)
     {
+        if (clip == walkClip && sfxCource.isPlaying)
+                return;
         sfxCource.PlayOneShot(clip);
     }
 

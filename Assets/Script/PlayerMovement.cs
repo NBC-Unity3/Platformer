@@ -63,6 +63,8 @@ public class PlayerMovement : MonoBehaviour
             rigidbody.velocity = velocity;
             return;
         }
+        else
+            audioManager.PlaySFX(audioManager.walkClip);
 
 
         velocity.x = direction.x * 10; // x 속도 적용

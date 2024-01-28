@@ -28,6 +28,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1.0f;
         setTime = 540.0f;
         max_distance = Vector3.Distance(player.transform.position, goal.transform.position);
     }
@@ -47,7 +48,7 @@ public class UIManager : MonoBehaviour
         else if (setTime > 1260.0f)
         {
             Time.timeScale = 0.0f;
-            result.SetActive(true);
+            isDie();
         }
         setTimeTxt.text = Mathf.Floor(setTime / 60f).ToString().PadLeft(2, '0') + 
             ":" + 
@@ -81,6 +82,11 @@ public class UIManager : MonoBehaviour
         isPause = false;
         Time.timeScale = 1.0f;
         settings.SetActive(false);
+    }
+
+    public void isDie()
+    {
+        result.SetActive(true);
     }
 
     public void getItem()
