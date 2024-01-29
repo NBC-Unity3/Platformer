@@ -16,6 +16,7 @@ public class ModeChoice : MonoBehaviour
     {
         Fix = 0,
         Drop,
+        RandomRain,
         Rain,
         Fly,
         Hide
@@ -31,6 +32,9 @@ public class ModeChoice : MonoBehaviour
                 break;
             case Mode.Drop:
                 DropMode();
+                break;
+            case Mode.RandomRain:
+                RandomRainMode();
                 break;
             case Mode.Rain:
                 RainMode();
@@ -63,9 +67,18 @@ public class ModeChoice : MonoBehaviour
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX;        
     }
 
-    public void RainMode()
+    public void RandomRainMode()
     {
         _rigidbody2D = choiceObject.GetComponent<Rigidbody2D>();
+        _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        _rigidbody2D.gravityScale = gravity;
+        _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        _rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX;
+    }
+
+    public void RainMode()
+    {
+        _rigidbody2D = choiceObject.GetComponentInChildren<Rigidbody2D>();
         _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         _rigidbody2D.gravityScale = gravity;
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
