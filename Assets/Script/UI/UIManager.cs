@@ -7,24 +7,29 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using static UnityEngine.EventSystems.EventTrigger;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
+using UnityEngine.U2D;
 public class UIManager : MonoBehaviour
 {
     [Header ("UI")]
     [SerializeField] TextMeshProUGUI setTimeTxt;
     [SerializeField] TextMeshProUGUI distanceTxt;
+    [SerializeField] TextMeshProUGUI resultDistanceTxt;
 
-    [SerializeField] GameObject time;
+    
     [SerializeField] GameObject item;
     [SerializeField] GameObject settings;
     [SerializeField] GameObject result;
     [SerializeField] GameObject goal;
     [SerializeField] GameObject player;
-    
+
     private float distance;
     private float max_distance;
 
     private bool isPause = false;
     private float setTime;
+
+    public Button masterMuteBtn, bgmMuteBtn, sfxMuteBtn;
 
     void Start()
     {
@@ -93,5 +98,11 @@ public class UIManager : MonoBehaviour
     {
 
     }
-
+    public void ChangeBtnColor(Button btn)
+    {
+        if (btn.image.color == Color.red)
+            btn.image.color = Color.white;
+        else if (btn.image.color == Color.white)
+            btn.image.color = Color.red;
+    }
 }

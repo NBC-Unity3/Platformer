@@ -27,8 +27,13 @@ public class AudioManager : MonoBehaviour
     private bool bgmMute = false;
     private bool sfxMute = false;
 
+    UIManager uiManager;
 
 
+    private void Awake()
+    {
+        uiManager = GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +69,7 @@ public class AudioManager : MonoBehaviour
 
     public void MuteMasterVolume()
     {
+        uiManager.ChangeBtnColor(uiManager.masterMuteBtn);
         if (!masterMute)
         {
             masterMute = true;
@@ -77,6 +83,7 @@ public class AudioManager : MonoBehaviour
     }
     public void MuteBGMVolume()
     {
+        uiManager.ChangeBtnColor(uiManager.bgmMuteBtn);
         if (!bgmMute)
         {
             bgmMute = true;
@@ -90,7 +97,8 @@ public class AudioManager : MonoBehaviour
     }
     public void MuteSFXVolume()
     {
-        if (!masterMute)
+        uiManager.ChangeBtnColor(uiManager.sfxMuteBtn);
+        if (!sfxMute)
         {
             sfxMute = true;
             mixer.SetFloat("SFX", -80.0f);
