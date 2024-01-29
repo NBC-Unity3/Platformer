@@ -48,12 +48,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump(Vector3 direction)
     {
-        audioManager.PlaySFX(audioManager.jumpClip);
         if (JumpOn) 
         {
             JumpOn = false;
             Secondjump = true;
             rigidbody.AddForce(direction * jump, ForceMode2D.Impulse);
+            audioManager.PlaySFX(audioManager.jumpClip);
         }
         else if(Secondjump)
         {
@@ -62,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = 0;
             rigidbody.velocity = velocity;
             rigidbody.AddForce(direction * (jump-2), ForceMode2D.Impulse);
+            audioManager.PlaySFX(audioManager.jumpClip);
         }
     }
 

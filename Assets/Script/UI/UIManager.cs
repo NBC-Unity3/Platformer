@@ -10,6 +10,8 @@ using static UnityEngine.EventSystems.EventTrigger;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine.U2D;
 using System.Text;
+using UnityEditor.AssetImporters;
+using System.Threading;
 public class UIManager : MonoBehaviour
 {
     [Header ("UI")]
@@ -44,7 +46,7 @@ public class UIManager : MonoBehaviour
         setTime = 540.0f;//초기 540
         max_distance = Vector3.Distance(player.transform.position, goal.transform.position);
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-        endResult("TimeOut");
+        //endResult("TimeOut");
     }
 
     void Update()
@@ -61,16 +63,17 @@ public class UIManager : MonoBehaviour
 
         else if (setTime >= 1260.0f && !isEnd)
         {
+            Time.timeScale = 1.0f;
+            if (!isEnd)
+                endResult("TimeOut");
             isEnd = true;
-            Time.timeScale = 0.0f;
-            endResult("TimeOut");
         }
         setTimeTxt.text = Mathf.Floor(setTime / 60f).ToString().PadLeft(2, '0') + 
             ":" + 
             Mathf.Floor(setTime % 60f).ToString().PadLeft(2, '0');
         
         //ESC 키다운시 설정
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && isEnd == false)
         {
             isPause = !isPause;
             if (isPause)
@@ -107,7 +110,6 @@ public class UIManager : MonoBehaviour
         result.SetActive(true);
         StartCoroutine(textPrint(delay, "크크크.. 오늘도 TIL을 쓰게 만들어야겠군!"));
         //resultTxt.text = "Press Any Key";
-        
     }
 
     public void getItem()
