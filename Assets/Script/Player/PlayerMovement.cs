@@ -12,8 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public InputController playerMove;
     protected Rigidbody2D rigidbody;
 
-    protected bool JumpOn;
-    protected bool Secondjump;
+    public bool JumpOn;
+    public bool Secondjump;
 
     private Vector2 movementDirection = Vector3.zero;
     SpriteRenderer sprite;
