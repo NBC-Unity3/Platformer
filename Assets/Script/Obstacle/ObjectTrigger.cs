@@ -31,8 +31,7 @@ public class ObjectTrigger : MonoBehaviour
             myObstacle.choice == ModeChoice.Mode.Fly)
         {
             if (myObstacle.choiceObject.activeSelf == false)
-                Invoke("WaitDrop", myObstacle.wait);
-            Destroy(myObstacle.triggerObject);
+                Invoke("WaitDrop", myObstacle.wait);            
         }
 
         if (myObstacle.choice == ModeChoice.Mode.Rain)
@@ -56,5 +55,6 @@ public class ObjectTrigger : MonoBehaviour
     public void WaitDrop()
     {
         myObstacle.choiceObject.SetActive(true);
+        Destroy(myObstacle.triggerObject);
     }
 }
