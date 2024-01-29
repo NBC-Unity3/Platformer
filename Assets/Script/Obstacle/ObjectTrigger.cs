@@ -34,21 +34,36 @@ public class ObjectTrigger : MonoBehaviour
                 Invoke("WaitDrop", myObstacle.wait);            
         }
 
+        if (myObstacle.choice == ModeChoice.Mode.RandomRain)
+        {
+            if (myObstacle.choiceObject.activeSelf == false)
+                myObstacle.choiceObject.SetActive(true);
+
+            InvokeRepeating("MakeRandomRain", 0, 0.5f);
+
+            myObstacle.triggerObject.SetActive(false);
+        }
+
         if (myObstacle.choice == ModeChoice.Mode.Rain)
         {
             if (myObstacle.choiceObject.activeSelf == false)
                 myObstacle.choiceObject.SetActive(true);
 
-            InvokeRepeating("MakeRain", 0, 0.5f);
+            InvokeRepeating("MakeRain", myObstacle.wait, 2f);
 
             myObstacle.triggerObject.SetActive(false);
         }
     }
 
-    public void MakeRain()
+    public void MakeRandomRain()
     {
         float x = Random.Range(min, max);// 값조절
         myObstacle.choiceObject.transform.position = new Vector3(x, 5f, 0);
+        Instantiate(myObstacle.choiceObject);
+    }
+
+    public void MakeRain()
+    {
         Instantiate(myObstacle.choiceObject);
     }
 
