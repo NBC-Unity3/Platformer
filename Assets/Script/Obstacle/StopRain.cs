@@ -9,6 +9,7 @@ public class StopRain : MonoBehaviour
     { 
         if (coll.gameObject.tag == "Player")
         {
+            this.gameObject.SetActive(false);
             Destroy(OnTrigger);
         }
     }
