@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
         bgmSource.Play();
     }
 
-    //isJump()µî¿¡¼­ ¾×¼¼½º ÇÏ°Ô²û pulibcÈ­
+    //isJump()ë“±ì—ì„œ ì•¡ì„¸ìŠ¤ í•˜ê²Œë” pulibcí™”
     public void PlaySFX(AudioClip clip)
     {
         if (clip == walkClip && sfxCource.isPlaying)
@@ -69,6 +69,7 @@ public class AudioManager : MonoBehaviour
 
     public void MuteMasterVolume()
     {
+        PlaySFX(uiSelectClip);
         uiManager.ChangeBtnColor(uiManager.masterMuteBtn);
         if (!masterMute)
         {
@@ -83,6 +84,7 @@ public class AudioManager : MonoBehaviour
     }
     public void MuteBGMVolume()
     {
+        PlaySFX(uiSelectClip);
         uiManager.ChangeBtnColor(uiManager.bgmMuteBtn);
         if (!bgmMute)
         {
@@ -97,6 +99,7 @@ public class AudioManager : MonoBehaviour
     }
     public void MuteSFXVolume()
     {
+        PlaySFX(uiSelectClip);
         uiManager.ChangeBtnColor(uiManager.sfxMuteBtn);
         if (!sfxMute)
         {

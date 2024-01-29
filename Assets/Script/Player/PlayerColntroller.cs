@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerColntroller : PlayerMovement
 {
-    // UI ������ ���� �̺�Ʈ
+    // UI 갱신을 위한 이벤트
     public event Action<Item> OnPickUpItem;
 
     [SerializeField]
@@ -16,12 +16,12 @@ public class PlayerColntroller : PlayerMovement
         if (collision.gameObject.CompareTag("JumpGround"))
         {
 
-            // 충돌 지점이 하나 이상 있는 경우
+            // 異⑸룎 吏?먯씠 ?섎굹 ?댁긽 ?덈뒗 寃쎌슦
             if (collision.contacts.Length > 0)
             {
                 ContactPoint2D contact = collision.contacts[0];
 
-                // 충돌의 법선을 확인하여 충돌 방향 결정
+                // 異⑸룎??踰뺤꽑???뺤씤?섏뿬 異⑸룎 諛⑺뼢 寃곗젙
                 if (contact.normal.y > 0.9f && Mathf.Abs(contact.normal.x) < 0.1f)
                 {
                     if (JumpOn) return;

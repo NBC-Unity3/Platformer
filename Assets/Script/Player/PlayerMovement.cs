@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movementDirection = Vector3.zero;
     SpriteRenderer sprite;
 
+    AudioManager audioManager;
+
     private void Awake()
     {
         playerMove = GetComponent<InputController>();
@@ -31,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         JumpOn = false;
         Secondjump = false;
         sprite = GetComponentInChildren<SpriteRenderer>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     void FixedUpdate()
@@ -45,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump(Vector3 direction)
     {
+        audioManager.PlaySFX(audioManager.jumpClip);
         if (JumpOn) 
         {
             JumpOn = false;
@@ -80,6 +84,8 @@ public class PlayerMovement : MonoBehaviour
             rigidbody.velocity = velocity;
             return;
         }
+        else
+            audioManager.PlaySFX(audioManager.walkClip);
 
 
         velocity.x = direction.x * 10; // x �ӵ� ����
