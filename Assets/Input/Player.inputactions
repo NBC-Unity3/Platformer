@@ -68,6 +68,39 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "2D Vector",
+                    "id": "d67501a8-a9ec-418a-8ad1-a95fd00c22e9",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "left",
+                    "id": "314dd758-593a-4b75-a940-62182e7ebeb1",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "561f02f4-bc84-4e11-96b2-1917a4431d10",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "c7fdb1e1-585e-4ba0-abd6-1ab2d5d53592",
                     "path": "<Keyboard>/space",
@@ -80,12 +113,12 @@
                 },
                 {
                     "name": "",
-                    "id": "79d30838-8a57-466e-a45b-341dc1d3fdc8",
-                    "path": "<Keyboard>/leftShift",
+                    "id": "b869eac3-70be-40f8-92ee-97b7f106df8c",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "ConsumeItem",
+                    "groups": "New control scheme",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

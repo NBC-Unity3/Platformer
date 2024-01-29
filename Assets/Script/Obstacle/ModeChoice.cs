@@ -10,6 +10,7 @@ public class ModeChoice : MonoBehaviour
     public float gravity;
     public float wait = 0f;
     private Rigidbody2D _rigidbody2D;
+    public bool oneTime = false;
 
 
     public enum Mode

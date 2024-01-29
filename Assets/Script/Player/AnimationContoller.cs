@@ -15,7 +15,7 @@ public class AnimationContoller : MonoBehaviour
     void Start()
     {
         controller.playerMove.OnMoveEvent += Move;
-        controller.playerMove.OnJumpEvent += Jump;
+        //controller.playerMove.OnJumpEvent += Jump;
     }
 
     void Move(Vector2 obj)
@@ -23,7 +23,7 @@ public class AnimationContoller : MonoBehaviour
 
     }
 
-    void Jump(Vector2 obj)
+    void Jump(Vector3 obj)
     {
 
     }
