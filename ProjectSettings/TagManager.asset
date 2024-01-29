@@ -8,6 +8,9 @@ TagManager:
   - Ground
   - Obstacle
   - Trigger
+  - UI
+  - Audio
+  - MapOut
   layers:
   - Default
   - TransparentFX
