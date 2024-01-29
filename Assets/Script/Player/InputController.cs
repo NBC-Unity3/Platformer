@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 
 public class InputController : MonoBehaviour
 {
-    public event Action<Vector2> OnMoveEvent; //ÀÌµ¿ Ã³¸®
-    public event Action<Vector3> OnJumpEvent; //Á¡ÇÁ Ã³¸®
+    public event Action<Vector2> OnMoveEvent; //ï¿½Ìµï¿½ Ã³ï¿½ï¿½
+    public event Action<Vector3> OnJumpEvent; //ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 
     public void CallMoveEvent(Vector2 direction)
     {
