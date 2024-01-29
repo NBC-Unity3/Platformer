@@ -59,6 +59,7 @@ public class ObjectTrigger : MonoBehaviour
 
 
             myObstacle.triggerObject.SetActive(false);
+            //test
         }
     }
 
