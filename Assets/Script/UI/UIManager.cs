@@ -107,9 +107,7 @@ public class UIManager : MonoBehaviour
         result.SetActive(true);
         StartCoroutine(textPrint(delay, "크크크.. 오늘도 TIL을 쓰게 만들어야겠군!"));
         //resultTxt.text = "Press Any Key";
-        while (true)
-            if (Input.anyKey)
-                SceneManager.LoadScene("MainScene");
+        
     }
 
     public void getItem()
