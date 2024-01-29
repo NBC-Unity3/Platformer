@@ -49,7 +49,11 @@ public class ObjectTrigger : MonoBehaviour
             if (myObstacle.choiceObject.activeSelf == false)
                 myObstacle.choiceObject.SetActive(true);
 
-            InvokeRepeating("MakeRain", myObstacle.wait, 2f);
+            if (myObstacle.oneTime == false)
+                InvokeRepeating("MakeRain", myObstacle.wait, 2f);
+            if (myObstacle.oneTime == true)
+                Invoke("MakeRain", myObstacle.wait);
+
 
             myObstacle.triggerObject.SetActive(false);
         }
