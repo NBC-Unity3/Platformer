@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerColntroller : PlayerMovement
 {
-    // UI °»½ÅÀ» À§ÇÑ ÀÌº¥Æ®
+    // UI ê°±ì‹ ì„ ìœ„í•œ ì´ë²¤íŠ¸
     public event Action<Item> OnPickUpItem;
 
     [SerializeField]
