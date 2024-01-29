@@ -1,10 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerColntroller : PlayerMovement
 {
+    // UI 갱신을 위한 이벤트
+    public event Action<Item> OnPickUpItem;
 
+    [SerializeField]
+    Item item = null;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -37,5 +42,26 @@ public class PlayerColntroller : PlayerMovement
     void PlayerDie()
     {
         Destroy(gameObject);
+    }
+
+    public void CallOnPickUpItem(Item newItem) 
+    {   
+        if(item != null) 
+        {
+            Destroy(item.gameObject);
+        }
+
+        this.item = newItem;
+        newItem.itemSprite.enabled = false;
+        newItem.transform.parent = transform;
+        newItem.transform.localPosition = Vector3.zero;
+
+        OnPickUpItem?.Invoke(newItem);
+    }
+
+    public void CallOnConsumeItem() 
+    {
+        item?.ConsumeItem(this.gameObject);
+        item = null;
     }
 }

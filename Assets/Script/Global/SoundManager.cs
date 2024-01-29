@@ -103,7 +103,7 @@ public class SoundManager : MonoBehaviour
     {
         if(!bgmNameCache.Contains(name)) 
         {
-            Debug.LogError("");
+            Debug.LogError("BGM name not found!");
             return;
         }
 
@@ -127,7 +127,7 @@ public class SoundManager : MonoBehaviour
     {
         if(!sfxNameCache.Contains(name)) 
         {
-            Debug.LogError("");
+            Debug.LogError("SFX name not found!");
             return;
         }
 
