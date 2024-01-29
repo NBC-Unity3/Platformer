@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "Tap",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ConsumeItem",
+                    "type": "Button",
+                    "id": "3f7aa24a-2a0e-48f5-9954-29e24774ef2d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [

@@ -32,4 +32,10 @@ public class InputController : MonoBehaviour
         CallJumpEvent(jumpInput);
     }
 
+    public void OnConsumeItem() 
+    {
+        Debug.Log("ConsumeItemKey Pressed!");
+        GetComponent<PlayerColntroller>()?.CallOnConsumeItem();
+    }
+
 }
