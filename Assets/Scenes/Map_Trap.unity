@@ -1611,6 +1611,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 942789308}
     m_Modifications:
+    - target: {fileID: 640160026659660577, guid: d585562dc45ce70428b8676f3a63e052, type: 3}
+      propertyPath: m_Size.x
+      value: 3.3063812
+      objectReference: {fileID: 0}
+    - target: {fileID: 640160026659660577, guid: d585562dc45ce70428b8676f3a63e052, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0937476
+      objectReference: {fileID: 0}
+    - target: {fileID: 640160026659660577, guid: d585562dc45ce70428b8676f3a63e052, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.1531906
+      objectReference: {fileID: 0}
+    - target: {fileID: 640160026659660577, guid: d585562dc45ce70428b8676f3a63e052, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.5468738
+      objectReference: {fileID: 0}
     - target: {fileID: 1027746121757247303, guid: d585562dc45ce70428b8676f3a63e052, type: 3}
       propertyPath: max
       value: 
@@ -7819,7 +7835,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883129789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4, y: -3.21, z: 0}
+  m_LocalPosition: {x: 193.5, y: -3.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9641,6 +9657,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 942789308}
     m_Modifications:
+    - target: {fileID: 640160026659660577, guid: d585562dc45ce70428b8676f3a63e052, type: 3}
+      propertyPath: m_Size.x
+      value: 3.092392
+      objectReference: {fileID: 0}
+    - target: {fileID: 640160026659660577, guid: d585562dc45ce70428b8676f3a63e052, type: 3}
+      propertyPath: m_Size.y
+      value: 2.331519
+      objectReference: {fileID: 0}
+    - target: {fileID: 640160026659660577, guid: d585562dc45ce70428b8676f3a63e052, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.046196
+      objectReference: {fileID: 0}
+    - target: {fileID: 640160026659660577, guid: d585562dc45ce70428b8676f3a63e052, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.66575944
+      objectReference: {fileID: 0}
     - target: {fileID: 1027746121757247303, guid: d585562dc45ce70428b8676f3a63e052, type: 3}
       propertyPath: max
       value: 
@@ -10699,7 +10731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1285540306
 MonoBehaviour:
   m_ObjectHideFlags: 0
