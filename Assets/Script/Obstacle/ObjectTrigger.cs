@@ -9,8 +9,11 @@ public class ObjectTrigger : MonoBehaviour
     private GameObject myObject;
     private Obstacle myObstacle;
 
-    public float min = 0f;
-    public float max = 0f;
+    public Transform min;
+    public Transform max;
+
+    public float InstanseSpeed; 
+
 
     private void Start()
     {
@@ -39,7 +42,7 @@ public class ObjectTrigger : MonoBehaviour
             if (myObstacle.choiceObject.activeSelf == false)
                 myObstacle.choiceObject.SetActive(true);
 
-            InvokeRepeating("MakeRandomRain", 0, 0.5f);
+            InvokeRepeating("MakeRandomRain", 0, InstanseSpeed);
 
             myObstacle.triggerObject.SetActive(false);
         }
@@ -49,21 +52,27 @@ public class ObjectTrigger : MonoBehaviour
             if (myObstacle.choiceObject.activeSelf == false)
                 myObstacle.choiceObject.SetActive(true);
 
-            InvokeRepeating("MakeRain", myObstacle.wait, 2f);
+            if (myObstacle.oneTime == false)
+                InvokeRepeating("MakeRain", myObstacle.wait, InstanseSpeed);
+            if (myObstacle.oneTime == true)
+                Invoke("MakeRain", myObstacle.wait);
+
 
             myObstacle.triggerObject.SetActive(false);
+            //test
         }
     }
 
     public void MakeRandomRain()
     {
-        float x = Random.Range(min, max);// 값조절
-        myObstacle.choiceObject.transform.position = new Vector3(x, 5f, 0);
+        float x = Random.Range(min.position.x,max.position.x);// 값조절
+        myObstacle.choiceObject.transform.position = new Vector3(x, min.position.y, 0);
         Instantiate(myObstacle.choiceObject);
     }
 
     public void MakeRain()
     {
+        myObstacle.choiceObject.transform.position = new Vector3(min.position.x, min.position.y, 0);
         Instantiate(myObstacle.choiceObject);
     }
 

@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] protected float jump;
 
     public float limitVelocityY = -2; 
-    protected InputController playerMove;
+    public InputController playerMove;
     protected Rigidbody2D rigidbody;
 
     protected bool JumpOn;

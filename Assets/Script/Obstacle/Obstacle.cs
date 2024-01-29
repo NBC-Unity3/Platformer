@@ -14,7 +14,7 @@ public class Obstacle : ModeChoice
     private void OnCollisionEnter2D(Collision2D coll)
     {
         if (choice != Mode.Fix && choice != Mode.Hide &&
-            (coll.gameObject.tag == "Ground" || coll.gameObject.tag == "Player"))
+            (coll.gameObject.tag == "JumpGround" || coll.gameObject.tag == "Player"))
         {
             Destroy(gameObject);
 
