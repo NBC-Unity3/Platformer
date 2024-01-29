@@ -9,6 +9,9 @@ public class ObjectTrigger : MonoBehaviour
     private GameObject myObject;
     private Obstacle myObstacle;
 
+    public float min = 0f;
+    public float max = 0f;
+
     private void Start()
     {
         myObstacle = GetComponent<Obstacle>();
@@ -41,12 +44,11 @@ public class ObjectTrigger : MonoBehaviour
 
             myObstacle.triggerObject.SetActive(false);
         }
-
     }
 
     public void MakeRain()
     {
-        float x = Random.Range(-8.5f, -2.5f);// 값조절
+        float x = Random.Range(min, max);// 값조절
         myObstacle.choiceObject.transform.position = new Vector3(x, 5f, 0);
         Instantiate(myObstacle.choiceObject);
     }
