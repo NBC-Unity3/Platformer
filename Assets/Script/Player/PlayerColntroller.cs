@@ -11,12 +11,12 @@ public class PlayerColntroller : PlayerMovement
         if (collision.gameObject.CompareTag("JumpGround"))
         {
 
-            // Ãæµ¹ ÁöÁ¡ÀÌ ÇÏ³ª ÀÌ»ó ÀÖ´Â °æ¿ì
+            // ì¶©ëŒ ì§€ì ì´ í•˜ë‚˜ ì´ìƒ ìžˆëŠ” ê²½ìš°
             if (collision.contacts.Length > 0)
             {
                 ContactPoint2D contact = collision.contacts[0];
 
-                // Ãæµ¹ÀÇ ¹ý¼±À» È®ÀÎÇÏ¿© Ãæµ¹ ¹æÇâ °áÁ¤
+                // ì¶©ëŒì˜ ë²•ì„ ì„ í™•ì¸í•˜ì—¬ ì¶©ëŒ ë°©í–¥ ê²°ì •
                 if (contact.normal.y > 0.9f && Mathf.Abs(contact.normal.x) < 0.1f)
                 {
                     if (JumpOn) return;
