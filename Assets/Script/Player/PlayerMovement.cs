@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    [SerializeField] protected int speed;
-    [SerializeField] protected float jump;
+    [SerializeField] public int speed;
+    [SerializeField] public float jump;
 
     public float limitVelocityY = -2; 
     public InputController playerMove;
@@ -82,11 +82,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        velocity.x = direction.x * 10; // x ¼Óµµ Àû¿ë
+        velocity.x = direction.x * 10; // x ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½
         velocity.y = rigidbody.velocity.y;
         rigidbody.velocity = velocity;
 
-        //½ºÇÁ¶óÀÌÆ® ¹ÝÀü
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
         if (velocity.x < 0)
         {
             sprite.flipX = true;
@@ -96,6 +96,4 @@ public class PlayerMovement : MonoBehaviour
             sprite.flipX = false;
         }
     }
-
-
 }

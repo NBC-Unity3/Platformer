@@ -1,22 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerColntroller : PlayerMovement
 {
+    // UI ∞ªΩ≈¿ª ¿ß«— ¿Ã∫•∆Æ
+    public event Action<Item> OnPickUpItem;
 
+    [SerializeField]
+    Item item = null;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("JumpGround"))
         {
 
-            // √Êµπ ¡ˆ¡°¿Ã «œ≥™ ¿ÃªÛ ¿÷¥¬ ∞ÊøÏ
+            // Ï∂©Îèå ÏßÄÏ†êÏù¥ ÌïòÎÇò Ïù¥ÏÉÅ ÏûàÎäî Í≤ΩÏö∞
             if (collision.contacts.Length > 0)
             {
                 ContactPoint2D contact = collision.contacts[0];
 
-                // √Êµπ¿« π˝º±¿ª »Æ¿Œ«œø© √Êµπ πÊ«‚ ∞·¡§
+                // Ï∂©ÎèåÏùò Î≤ïÏÑ†ÏùÑ ÌôïÏù∏ÌïòÏó¨ Ï∂©Îèå Î∞©Ìñ• Í≤∞Ï†ï
                 if (contact.normal.y > 0.9f && Mathf.Abs(contact.normal.x) < 0.1f)
                 {
                     if (JumpOn) return;
@@ -37,5 +42,26 @@ public class PlayerColntroller : PlayerMovement
     void PlayerDie()
     {
         Destroy(gameObject);
+    }
+
+    public void CallOnPickUpItem(Item newItem) 
+    {   
+        if(item != null) 
+        {
+            Destroy(item.gameObject);
+        }
+
+        this.item = newItem;
+        newItem.itemSprite.enabled = false;
+        newItem.transform.parent = transform;
+        newItem.transform.localPosition = Vector3.zero;
+
+        OnPickUpItem?.Invoke(newItem);
+    }
+
+    public void CallOnConsumeItem() 
+    {
+        item?.ConsumeItem(this.gameObject);
+        item = null;
     }
 }
