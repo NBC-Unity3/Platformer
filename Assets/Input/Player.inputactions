@@ -101,6 +101,17 @@
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b869eac3-70be-40f8-92ee-97b7f106df8c",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
