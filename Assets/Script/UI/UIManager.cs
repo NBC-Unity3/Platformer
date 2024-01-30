@@ -35,7 +35,6 @@ public class UIManager : MonoBehaviour
     AudioManager audioManager;
 
     public Text targetText;
-    public float TimeScail;
     private float delay = 0.125f;
 
     void Start()
@@ -55,7 +54,7 @@ public class UIManager : MonoBehaviour
         //시간UI 업데이트
         if (setTime < 1260.0f)
         {
-            setTime += Time.deltaTime * TimeScail;
+            setTime += Time.deltaTime * 20;
         }
 
         else if (setTime >= 1260.0f && !isEnd)
