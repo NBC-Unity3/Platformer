@@ -26,5 +26,12 @@ public class MoonController : MonoBehaviour
         transform.position = pos;
     }
 
+    void OnTriggerEnter2D (Collider2D col)
+    {
+        if (col.name == "Clear")
+        {
+            Destroy(gameObject);
+        }
+    }
 
 }
