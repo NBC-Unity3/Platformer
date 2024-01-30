@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
 
         player.GetComponent<PlayerColntroller>().OnPickUpItem += getItem;
         player.GetComponent<PlayerColntroller>().OnConsumeItem += consumeItem;
+        this.item.GetComponent<Image>().enabled = false;
     }
 
     void Update()
@@ -116,12 +117,13 @@ public class UIManager : MonoBehaviour
 
     public void getItem(Item item)
     {
-        Debug.Log("Item Image Changed!");
+        this.item.GetComponent<Image>().enabled = true;
         this.item.GetComponent<Image>().sprite = item.itemSprite.sprite;
     }
 
     public void consumeItem() 
     {
+        this.item.GetComponent<Image>().enabled = false;
         this.item.GetComponent<Image>().sprite = null;
     }
 
