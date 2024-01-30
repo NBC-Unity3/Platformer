@@ -23,44 +23,49 @@ public class ObjectTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        if (myObstacle.choice == ModeChoice.Mode.Hide)
+        if(coll.gameObject.tag == "Player")
         {
-            if (myObstacle.choiceObject.activeSelf == false)
-                myObstacle.choiceObject.SetActive(true);
-            Destroy(myObstacle.triggerObject);
+            if (myObstacle.choice == ModeChoice.Mode.Hide)
+            {
+                if (myObstacle.choiceObject.activeSelf == false)
+                    myObstacle.choiceObject.SetActive(true);
+                Destroy(myObstacle.triggerObject);
+            }
+
+            if (myObstacle.choice == ModeChoice.Mode.Drop ||
+                myObstacle.choice == ModeChoice.Mode.Fly)
+            {
+                if (myObstacle.choiceObject.activeSelf == false)
+                    Invoke("WaitDrop", myObstacle.wait);
+            }
+
+            if (myObstacle.choice == ModeChoice.Mode.RandomRain)
+            {
+                if (myObstacle.choiceObject.activeSelf == false)
+                    myObstacle.choiceObject.SetActive(true);
+
+                InvokeRepeating("MakeRandomRain", 0, InstanseSpeed);
+
+                myObstacle.triggerObject.SetActive(false);
+            }
+
+            if (myObstacle.choice == ModeChoice.Mode.Rain)
+            {
+                if (myObstacle.choiceObject.activeSelf == false)
+                    myObstacle.choiceObject.SetActive(true);
+
+                if (myObstacle.oneTime == false)
+                    InvokeRepeating("MakeRain", myObstacle.wait, InstanseSpeed);
+                if (myObstacle.oneTime == true)
+                    Invoke("MakeRain", myObstacle.wait);
+
+
+                myObstacle.triggerObject.SetActive(false);
+                //test
+            }
         }
 
-        if (myObstacle.choice == ModeChoice.Mode.Drop ||
-            myObstacle.choice == ModeChoice.Mode.Fly)
-        {
-            if (myObstacle.choiceObject.activeSelf == false)
-                Invoke("WaitDrop", myObstacle.wait);            
-        }
-
-        if (myObstacle.choice == ModeChoice.Mode.RandomRain)
-        {
-            if (myObstacle.choiceObject.activeSelf == false)
-                myObstacle.choiceObject.SetActive(true);
-
-            InvokeRepeating("MakeRandomRain", 0, InstanseSpeed);
-
-            myObstacle.triggerObject.SetActive(false);
-        }
-
-        if (myObstacle.choice == ModeChoice.Mode.Rain)
-        {
-            if (myObstacle.choiceObject.activeSelf == false)
-                myObstacle.choiceObject.SetActive(true);
-
-            if (myObstacle.oneTime == false)
-                InvokeRepeating("MakeRain", myObstacle.wait, InstanseSpeed);
-            if (myObstacle.oneTime == true)
-                Invoke("MakeRain", myObstacle.wait);
-
-
-            myObstacle.triggerObject.SetActive(false);
-            //test
-        }
+        
     }
 
     public void MakeRandomRain()
