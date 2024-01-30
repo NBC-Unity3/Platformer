@@ -21,15 +21,22 @@ public class Obstacle : ModeChoice
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (choice != Mode.Fix && choice != Mode.Hide &&
-            (coll.gameObject.tag == "JumpGround" || coll.gameObject.tag == "Player"))
+        if (choice != Mode.Fix && choice != Mode.Hide)//drop fly모드
         {
-            Destroy(gameObject);
-            coll.gameObject.GetComponentInChildren<Animator>().enabled = false;
-            coll.gameObject.GetComponent<PlayerInput>().enabled = false;
+            if(coll.gameObject.tag == "MapOut")
+                Destroy(gameObject);
+
+            if(coll.gameObject.tag == "Nag")
+                Destroy(coll.gameObject);
+
+            if(choice == Mode.Fly && coll.gameObject.tag == "Ground")//wallTile
+                Destroy(gameObject);
 
             if (coll.gameObject.tag == "Player")
             {
+                coll.gameObject.GetComponentInChildren<Animator>().enabled = false;
+                coll.gameObject.GetComponent<PlayerInput>().enabled = false;
+
                 if (this.gameObject.tag == "Clear")
                     uiManager.endResult(clearStr);
                 if (this.gameObject.tag == "Bed")
@@ -39,7 +46,7 @@ public class Obstacle : ModeChoice
 
                 Debug.Log($"{gameObject.tag} drop or fly랑 Player부딪힘");
             }
-        }
+        }          
         else
         {
             if (coll.gameObject.tag == "Player") //Fix인 Obstacle이랑 부딪혔을때
