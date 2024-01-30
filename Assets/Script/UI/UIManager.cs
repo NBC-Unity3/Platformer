@@ -114,12 +114,11 @@ public class UIManager : MonoBehaviour
     {
         //item.sprite 변경..
     }
-    public void ChangeBtnColor(Button btn)
+    public void ChangeBtnColor(Button btn, bool mute)
     {
-        audioManager.PlaySFX(audioManager.uiSelectClip);
-        if (btn.image.color == Color.red)
+        if (mute == false)
             btn.image.color = Color.white;
-        else if (btn.image.color == Color.white)
+        else if (mute == true)
             btn.image.color = Color.red;
     }
     IEnumerator textPrint(float delay, string text)
