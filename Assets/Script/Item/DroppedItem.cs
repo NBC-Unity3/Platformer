@@ -12,22 +12,30 @@ public class DroppedItem : MonoBehaviour
     [SerializeField]
     Item item;
 
+    [SerializeField]
+    AudioManager audioManager;
+
     private void Awake()
     {
         
+    }
+
+    private void Start()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) 
         {
-            // È¿°úÀ½
-            SoundManager.Instance.PlaySFX("");
+            // íš¨ê³¼ìŒ
+            audioManager.PlaySFX(audioManager.uiSelectClip);
 
-            // ¾ÆÀÌÅÛ ½Àµæ Ã³¸®
+            // ì•„ì´í…œ ìŠµë“ ì²˜ë¦¬
             collision.GetComponent<PlayerColntroller>()?.CallOnPickUpItem(item);
 
-            // ÇöÀç ¿ÀºêÁ§Æ® »èÁ¦
+            // í˜„ì¬ ì˜¤ë¸Œì íŠ¸ ì‚­ì œ
             Destroy(gameObject);
         }
     }
