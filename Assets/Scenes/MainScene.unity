@@ -7964,8 +7964,8 @@ MonoBehaviour:
   player: {fileID: 2037783866}
   prefab: {fileID: 4221444811288253453, guid: d4491764cf8ce2a4eae054ec2223c074, type: 3}
   parent: {fileID: 951150481}
-  minTime: 1
-  maxTime: 3
+  minTime: 1.5
+  maxTime: 3.5
 --- !u!1 &1000165075
 GameObject:
   m_ObjectHideFlags: 0
