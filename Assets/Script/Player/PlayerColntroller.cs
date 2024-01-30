@@ -50,6 +50,18 @@ public class PlayerColntroller : PlayerMovement
         //}
     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("JumpGround"))
+        {
+            JumpOn = false;
+            Secondjump = true;
+
+        }
+
+    }
+
+
 
     void PlayerDie()
     {
@@ -76,4 +88,6 @@ public class PlayerColntroller : PlayerMovement
         item?.ConsumeItem(this.gameObject);
         item = null;
     }
+
+
 }
