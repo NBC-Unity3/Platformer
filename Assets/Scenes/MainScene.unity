@@ -7199,7 +7199,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7224,10 +7224,10 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 8df55c17591eff440972dd1cdbbf572b, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: 1984790112, guid: 483a5389b00efe9419935f46e625d61b, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1984790112, guid: 483a5389b00efe9419935f46e625d61b, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1018311422, guid: 483a5389b00efe9419935f46e625d61b, type: 3}
   m_TileMatrixArray:
@@ -18650,6 +18650,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2016000637}
   - component: {fileID: 2016000638}
+  - component: {fileID: 2016000639}
   m_Layer: 0
   m_Name: back1
   m_TagString: Untagged
@@ -18724,6 +18725,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2016000639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016000636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d6f241e66c623c4ebca99a8f258ba05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 1
+  spriteRenderer: {fileID: 0}
 --- !u!1 &2016024701
 GameObject:
   m_ObjectHideFlags: 0
@@ -24248,7 +24263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8959870744336217332
 GameObject:
   m_ObjectHideFlags: 0
