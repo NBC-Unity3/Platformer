@@ -36,8 +36,8 @@ public class MovePlatform : MonoBehaviour
     {
         currentPosition += Time.deltaTime * speed * direction;
 
-        if (currentPosition.x >= rightMax || currentPosition.x <= leftMax) direction.x *= -1;
-        if (currentPosition.y >= upMax || currentPosition.y <= downMax) direction.y *= -1;
+        if (currentPosition.x > rightMax || currentPosition.x < leftMax) direction.x *= -1;
+        if (currentPosition.y > upMax || currentPosition.y < downMax) direction.y *= -1;
 
         transform.position = currentPosition;
     }
