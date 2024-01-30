@@ -15,31 +15,52 @@ public class PlayerColntroller : PlayerMovement
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Ground")) return;
+
+        if (JumpOn) return;
+
+        animation.ClearJump();
+
+        var velocity = rigidbody.velocity;
+        velocity.y = 0;
+        rigidbody.velocity = velocity;
+
+        JumpOn = true;
+        Secondjump = false;
+
+        //// 충돌 지점이 하나 이상 있는 경우
+        //if (collision.contacts.Length > 0)
+        //{
+        //    ContactPoint2D contact = collision.contacts[0];
+
+        //    // 충돌의 법선을 확인하여 충돌 방향 결정
+        //    if (contact.normal.y > 0.9f && Mathf.Abs(contact.normal.x) < 0.1f)
+        //    {
+        //        if (JumpOn) return;
+
+        //        animation.ClearJump();
+
+        //        var velocity = rigidbody.velocity;
+        //        velocity.y = 0;
+        //        rigidbody.velocity = velocity;
+
+        //        JumpOn = true;
+        //        Secondjump = false;
+        //    }
+        //}
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
         if (collision.gameObject.CompareTag("JumpGround"))
         {
+            JumpOn = false;
+            Secondjump = true;
 
-            // 충돌 지점이 하나 이상 있는 경우
-            if (collision.contacts.Length > 0)
-            {
-                ContactPoint2D contact = collision.contacts[0];
-
-                // 충돌의 법선을 확인하여 충돌 방향 결정
-                if (contact.normal.y > 0.9f && Mathf.Abs(contact.normal.x) < 0.1f)
-                {
-                    if (JumpOn) return;
-
-                    animation.ClearJump();
-
-                    var velocity = rigidbody.velocity;
-                    velocity.y = 0;
-                    rigidbody.velocity = velocity;
-
-                    JumpOn = true;
-                    Secondjump = false;
-                }
-            }
         }
+
     }
+
 
 
     void PlayerDie()
@@ -67,4 +88,6 @@ public class PlayerColntroller : PlayerMovement
         item?.ConsumeItem(this.gameObject);
         item = null;
     }
+
+
 }

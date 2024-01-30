@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4373457822648380109}
   - component: {fileID: 5910995405403835307}
   - component: {fileID: 7668022908963635279}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
