@@ -11,6 +11,7 @@ TagManager:
   - UI
   - Audio
   - MapOut
+  - Nag
   layers:
   - Default
   - TransparentFX
