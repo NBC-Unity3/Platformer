@@ -14,14 +14,15 @@ public class RainCollision : MonoBehaviour
     {
         if (coll.gameObject.tag == "JumpGround" || coll.gameObject.tag == "Player" || coll.gameObject.tag == "MapOut")
         {
-            Destroy(gameObject);
-
             if (coll.gameObject.tag == "Player")
             {
-                //TODO
-                Debug.Log("Player부딪힘");
-                uiManager.endResult("퇴실버튼을 못눌러서 매니저님이 찾아왔다");
+                if (this.gameObject.tag == "YouTube")
+                    uiManager.endResult("유튜브의 알고리즘이 나를 현혹시킨다...");
+
+                Debug.Log($"{gameObject.tag} rain이랑 Player부딪힘");
             }
+
+            Destroy(gameObject);
         }
     }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7011716765607603884}
   m_Layer: 0
   m_Name: NintendoRain
-  m_TagString: Obstacle
+  m_TagString: Nintendo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +123,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.7784562, y: 2.2222223}
+    oldSize: {x: 1.5628816, y: 1.25}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
