@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 using static UnityEngine.EventSystems.EventTrigger;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine.U2D;
+using Unity.VisualScripting;
 public class UIManager : MonoBehaviour
 {
     [Header ("UI")]
@@ -27,39 +28,48 @@ public class UIManager : MonoBehaviour
     private float max_distance;
 
     private bool isPause = false;
+    private bool isEnd = false;
     private float setTime;
 
     public Button masterMuteBtn, bgmMuteBtn, sfxMuteBtn;
+    AudioManager audioManager;
+
+    public TextMeshProUGUI targetText;
+    private float delay = 0.125f;
 
     void Start()
     {
         Time.timeScale = 1.0f;
         setTime = 540.0f;
         max_distance = Vector3.Distance(player.transform.position, goal.transform.position);
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        //endResult("TimeOut");
     }
 
     void Update()
     {
-        //∞≈∏ÆUI æ˜µ•¿Ã∆Æ
+        //Í±∞Î¶¨UI ÏóÖÎç∞Ïù¥Ìä∏
         distance = Mathf.Ceil((max_distance - Vector3.Distance(player.transform.position, goal.transform.position)) * 100 / max_distance);
         distanceTxt.text = distance.ToString("F0") + "%";
         
-        //Ω√∞£UI æ˜µ•¿Ã∆Æ
+        //ÏãúÍ∞ÑUI ÏóÖÎç∞Ïù¥Ìä∏
         if (setTime < 1260.0f)
         {
             setTime += Time.deltaTime * 20;
         }
 
-        else if (setTime > 1260.0f)
+        else if (setTime >= 1260.0f && !isEnd)
         {
-            Time.timeScale = 0.0f;
-            isDie();
+            Time.timeScale = 1f;
+            if (!isEnd)
+                endResult("TimeOut");
+            isEnd = true;
         }
         setTimeTxt.text = Mathf.Floor(setTime / 60f).ToString().PadLeft(2, '0') + 
             ":" + 
             Mathf.Floor(setTime % 60f).ToString().PadLeft(2, '0');
         
-        //ESC ≈∞¥ŸøÓΩ√ º≥¡§
+        //ESC ÌÇ§Îã§Ïö¥Ïãú ÏÑ§Ï†ï
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             isPause = !isPause;
@@ -79,30 +89,53 @@ public class UIManager : MonoBehaviour
 
     public void sceneChangeBtn(string scene)
     {
+        audioManager.PlaySFX(audioManager.uiSelectClip);
         SceneManager.LoadScene(scene);
     }
 
     public void resumeBtn()
     {
+        audioManager.PlaySFX(audioManager.uiSelectClip);
         isPause = false;
         Time.timeScale = 1.0f;
         settings.SetActive(false);
     }
 
-    public void isDie()
+    public void endResult(string ending)
     {
+        player.IsDestroyed();
         result.SetActive(true);
+        StartCoroutine(textPrint(delay, "??? : ÌÅ¨ÌÅ¨ÌÅ¨.. Ïò§ÎäòÎèÑ TILÏùÑ Ïì∞Í≤å ÎßåÎì§Ïñ¥ÏïºÍ≤†Íµ∞!"));
+        //resultTxt.text = "Press Any Key";
+        //if (Input.anyKey)
+        //    SceneManager.LoadScene("MainScene");
     }
 
     public void getItem()
     {
-        //item.sprite ∫Ø∞Ê..
+        //item.sprite Î≥ÄÍ≤Ω..
     }
     public void ChangeBtnColor(Button btn)
     {
+        audioManager.PlaySFX(audioManager.uiSelectClip);
         if (btn.image.color == Color.red)
             btn.image.color = Color.white;
         else if (btn.image.color == Color.white)
             btn.image.color = Color.red;
+    }
+    IEnumerator textPrint(float delay, string text)
+    {
+        int count = 0;
+
+        while (count != text.Length)
+        {
+            if (count < text.Length)
+            {
+                targetText.text += text[count].ToString();
+                count++;
+            }
+
+            yield return new WaitForSeconds(delay);
+        }
     }
 }

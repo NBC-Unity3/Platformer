@@ -8,15 +8,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public int speed;
     [SerializeField] public float jump;
 
-    public float limitVelocityY = -2; 
+    public float limitVelocityY = -2;
     public InputController playerMove;
     protected Rigidbody2D rigidbody;
 
-    protected bool JumpOn;
-    protected bool Secondjump;
+    public bool JumpOn;
+    public bool Secondjump;
 
     private Vector2 movementDirection = Vector3.zero;
     SpriteRenderer sprite;
+
+    AudioManager audioManager;
 
     private void Awake()
     {
@@ -31,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         JumpOn = false;
         Secondjump = false;
         sprite = GetComponentInChildren<SpriteRenderer>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     void FixedUpdate()
@@ -45,19 +48,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump(Vector3 direction)
     {
-        if (JumpOn) 
+        if (JumpOn)
         {
+            audioManager.PlaySFX(audioManager.jumpClip);
             JumpOn = false;
             Secondjump = true;
             rigidbody.AddForce(direction * jump, ForceMode2D.Impulse);
         }
-        else if(Secondjump)
+        else if (Secondjump)
         {
+            audioManager.PlaySFX(audioManager.jumpClip);
             Secondjump = false;
             var velocity = rigidbody.velocity;
             velocity.y = 0;
             rigidbody.velocity = velocity;
-            rigidbody.AddForce(direction * (jump-2), ForceMode2D.Impulse);
+            rigidbody.AddForce(direction * (jump - 2), ForceMode2D.Impulse);
         }
     }
 
@@ -66,8 +71,8 @@ public class PlayerMovement : MonoBehaviour
     private void ApplyMovment(Vector2 direction)
     {
         var velocity = rigidbody.velocity;
-        
-        if(velocity.y < limitVelocityY)
+
+        if (velocity.y < limitVelocityY)
         {
             velocity.y = limitVelocityY;
         }
@@ -80,6 +85,8 @@ public class PlayerMovement : MonoBehaviour
             rigidbody.velocity = velocity;
             return;
         }
+        else
+            audioManager.PlaySFX(audioManager.walkClip);
 
 
         velocity.x = direction.x * 10; // x �ӵ� ����
