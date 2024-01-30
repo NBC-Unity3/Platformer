@@ -19,7 +19,7 @@ public class Barrier : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("TIL")) 
+        if (collision.CompareTag("Obstacle")) 
         {
             StopAllCoroutines();
             Destroy(this);
