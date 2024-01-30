@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0f6f767c5ca504db008195e363c6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 30
+  duration: 15
   barrierObject: {fileID: 3461083579530395641}
 --- !u!1 &8462721826065400208
 GameObject:
@@ -267,7 +267,7 @@ Transform:
   m_Children:
   - {fileID: 7962797218570877109}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2533702937358607268
 BoxCollider2D:
@@ -389,3 +389,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 6600529478279664083}
+  audioManager: {fileID: 0}
