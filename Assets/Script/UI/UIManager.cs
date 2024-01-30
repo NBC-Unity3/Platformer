@@ -44,6 +44,9 @@ public class UIManager : MonoBehaviour
         setTime = 540.0f;
         max_distance = Vector3.Distance(player.transform.position, goal.transform.position);
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
+        player.GetComponent<PlayerColntroller>().OnPickUpItem += getItem;
+        player.GetComponent<PlayerColntroller>().OnConsumeItem += consumeItem;
     }
 
     void Update()
@@ -111,10 +114,17 @@ public class UIManager : MonoBehaviour
         isEnd = true;
     }
 
-    public void getItem()
+    public void getItem(Item item)
     {
-        //item.sprite 변경..
+        Debug.Log("Item Image Changed!");
+        this.item.GetComponent<Image>().sprite = item.itemSprite.sprite;
     }
+
+    public void consumeItem() 
+    {
+        this.item.GetComponent<Image>().sprite = null;
+    }
+
     public void ChangeBtnColor(Button btn)
     {
         audioManager.PlaySFX(audioManager.uiSelectClip);

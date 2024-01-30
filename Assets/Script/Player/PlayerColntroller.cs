@@ -7,7 +7,7 @@ public class PlayerColntroller : PlayerMovement
 {
     // UI 갱신을 위한 이벤트
     public event Action<Item> OnPickUpItem;
-
+    public event Action OnConsumeItem;
 
     [SerializeField]
     Item item = null;
@@ -96,6 +96,8 @@ public class PlayerColntroller : PlayerMovement
     {
         item?.ConsumeItem(this.gameObject);
         item = null;
+
+        OnConsumeItem?.Invoke();
     }
 
 
