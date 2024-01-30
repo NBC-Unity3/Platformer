@@ -1031,7 +1031,7 @@ MonoBehaviour:
   rightMax: 0
   leftMax: 0
   upMax: 0
-  downMax: -8
+  downMax: -6
   speed: 4.5
 --- !u!1 &105284827
 GameObject:
@@ -5711,7 +5711,7 @@ MonoBehaviour:
   isVertical: 1
   rightMax: 0
   leftMax: 0
-  upMax: 8
+  upMax: 6
   downMax: 0
   speed: 4.5
 --- !u!1001 &437949314
@@ -7755,7 +7755,7 @@ MonoBehaviour:
   rightMax: 0
   leftMax: 0
   upMax: 0
-  downMax: -8
+  downMax: -6
   speed: 4.5
 --- !u!1 &951150480
 GameObject:
@@ -23425,7 +23425,7 @@ MonoBehaviour:
   bgmMuteBtn: {fileID: 5879248331085159225}
   sfxMuteBtn: {fileID: 6940331297797273866}
   targetText: {fileID: 8487190973427038186}
-  TimeScaile: 5
+  TimeScaile: 7.5
 --- !u!224 &6727491898966855105
 RectTransform:
   m_ObjectHideFlags: 0
