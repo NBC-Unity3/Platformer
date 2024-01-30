@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Barrier : MonoBehaviour
@@ -19,10 +20,12 @@ public class Barrier : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Obstacle")) 
+        string[] tags = { "Bed", "Nintendo", "Youtube", };
+        if (tags.Contains(collision.tag)) 
         {
             StopAllCoroutines();
-            Destroy(this);
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
