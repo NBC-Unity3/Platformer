@@ -761,6 +761,7 @@ GameObject:
   - component: {fileID: 99328677}
   - component: {fileID: 99328676}
   - component: {fileID: 99328675}
+  - component: {fileID: 99328679}
   m_Layer: 0
   m_Name: TopDown
   m_TagString: JumpGround
@@ -986,6 +987,24 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &99328679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99328673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19f3fd6e3d780149a4c40b25d7e0299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVertical: 0
+  rightMax: 0
+  leftMax: 0
+  upMax: 0
+  downMax: 0
+  speed: 3
 --- !u!1 &105284827
 GameObject:
   m_ObjectHideFlags: 0
@@ -5356,6 +5375,7 @@ GameObject:
   - component: {fileID: 404023402}
   - component: {fileID: 404023401}
   - component: {fileID: 404023400}
+  - component: {fileID: 404023404}
   m_Layer: 0
   m_Name: TopDown (2)
   m_TagString: JumpGround
@@ -5581,6 +5601,24 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &404023404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404023398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19f3fd6e3d780149a4c40b25d7e0299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVertical: 0
+  rightMax: 0
+  leftMax: 0
+  upMax: 0
+  downMax: 0
+  speed: 3
 --- !u!1 &435242836
 GameObject:
   m_ObjectHideFlags: 0
@@ -7015,6 +7053,7 @@ GameObject:
   - component: {fileID: 909589140}
   - component: {fileID: 909589139}
   - component: {fileID: 909589138}
+  - component: {fileID: 909589142}
   m_Layer: 0
   m_Name: LeftRight
   m_TagString: JumpGround
@@ -7250,6 +7289,24 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &909589142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909589136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19f3fd6e3d780149a4c40b25d7e0299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVertical: 0
+  rightMax: 12
+  leftMax: 0
+  upMax: 0
+  downMax: 0
+  speed: 3
 --- !u!1 &915451899
 GameObject:
   m_ObjectHideFlags: 0
@@ -7263,6 +7320,7 @@ GameObject:
   - component: {fileID: 915451903}
   - component: {fileID: 915451902}
   - component: {fileID: 915451901}
+  - component: {fileID: 915451905}
   m_Layer: 0
   m_Name: LeftRight (1)
   m_TagString: JumpGround
@@ -7498,6 +7556,24 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &915451905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915451899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19f3fd6e3d780149a4c40b25d7e0299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVertical: 0
+  rightMax: 0
+  leftMax: 0
+  upMax: 0
+  downMax: 0
+  speed: 3
 --- !u!1 &944640463
 GameObject:
   m_ObjectHideFlags: 0
@@ -7511,6 +7587,7 @@ GameObject:
   - component: {fileID: 944640467}
   - component: {fileID: 944640466}
   - component: {fileID: 944640465}
+  - component: {fileID: 944640469}
   m_Layer: 0
   m_Name: TopDown (1)
   m_TagString: JumpGround
@@ -7736,6 +7813,24 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &944640469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944640463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19f3fd6e3d780149a4c40b25d7e0299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVertical: 0
+  rightMax: 0
+  leftMax: 0
+  upMax: 0
+  downMax: 0
+  speed: 3
 --- !u!1 &951150480
 GameObject:
   m_ObjectHideFlags: 0
@@ -17890,6 +17985,7 @@ GameObject:
   - component: {fileID: 1849324623}
   - component: {fileID: 1849324622}
   - component: {fileID: 1849324621}
+  - component: {fileID: 1849324625}
   m_Layer: 0
   m_Name: TopDown (3)
   m_TagString: JumpGround
@@ -18125,6 +18221,24 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1849324625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849324619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19f3fd6e3d780149a4c40b25d7e0299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVertical: 0
+  rightMax: 0
+  leftMax: 0
+  upMax: 0
+  downMax: 0
+  speed: 3
 --- !u!1 &1868449003
 GameObject:
   m_ObjectHideFlags: 0
