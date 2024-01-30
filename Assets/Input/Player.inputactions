@@ -121,6 +121,17 @@
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6837fa9b-aa87-4e60-864d-0f907e0e6d55",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ConsumeItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
