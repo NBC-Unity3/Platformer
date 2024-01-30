@@ -121,18 +121,18 @@ public class UIManager : MonoBehaviour
         this.item.GetComponent<Image>().sprite = item.itemSprite.sprite;
     }
 
+
     public void consumeItem() 
     {
         this.item.GetComponent<Image>().enabled = false;
         this.item.GetComponent<Image>().sprite = null;
     }
 
-    public void ChangeBtnColor(Button btn)
+    public void ChangeBtnColor(Button btn, bool mute)
     {
-        audioManager.PlaySFX(audioManager.uiSelectClip);
-        if (btn.image.color == Color.red)
+        if (mute == false)
             btn.image.color = Color.white;
-        else if (btn.image.color == Color.white)
+        else if (mute == true)
             btn.image.color = Color.red;
     }
     IEnumerator textPrint(float delay, string text)
