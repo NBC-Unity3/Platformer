@@ -79,7 +79,7 @@ public class AudioManager : MonoBehaviour
         float volume = bgmSlider.value;
         mixer.SetFloat("BGM", Mathf.Log10(volume) * 20);
         bgmMute = false;
-        PlayerPrefs.SetFloat("BGMVolume", volume);
+        //PlayerPrefs.SetFloat("BGMVolume", volume);
         uiManager.ChangeBtnColor(uiManager.bgmMuteBtn, false);
     }
 
@@ -88,7 +88,7 @@ public class AudioManager : MonoBehaviour
         float volume = sfxSlider.value;
         mixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
         sfxMute = false;
-        PlayerPrefs.SetFloat("SFXVolume", volume);
+        //PlayerPrefs.SetFloat("SFXVolume", volume);
         uiManager.ChangeBtnColor(uiManager.sfxMuteBtn, false);
     }
 
@@ -97,7 +97,7 @@ public class AudioManager : MonoBehaviour
         float volume = masterSlider.value;
         mixer.SetFloat("Master", Mathf.Log10(volume) * 20);
         masterMute = false;
-        PlayerPrefs.SetFloat("MasterVolume", volume);
+        //PlayerPrefs.SetFloat("MasterVolume", volume);
         uiManager.ChangeBtnColor(uiManager.masterMuteBtn, false);
     }
 
