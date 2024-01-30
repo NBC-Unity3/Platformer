@@ -12,7 +12,8 @@ public class RainCollision : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "JumpGround" || coll.gameObject.tag == "Player" || coll.gameObject.tag == "MapOut")
+        if (coll.gameObject.tag == "JumpGround" || coll.gameObject.tag == "Player"
+            || coll.gameObject.tag == "MapOut" || coll.gameObject.tag == "Nag")
         {
             if (coll.gameObject.tag == "Player")
             {
