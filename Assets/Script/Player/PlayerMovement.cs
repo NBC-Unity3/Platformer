@@ -91,8 +91,10 @@ public class PlayerMovement : MonoBehaviour
             rigidbody.velocity = velocity;
             return;
         }
-        else
+        else if( direction.x != 0 && JumpOn)
+        {
             audioManager.PlaySFX(audioManager.walkClip);
+        }
 
 
         velocity.x = direction.x * speed; // x �ӵ� ����
