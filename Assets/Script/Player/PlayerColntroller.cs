@@ -8,8 +8,10 @@ public class PlayerColntroller : PlayerMovement
     // UI 갱신을 위한 이벤트
     public event Action<Item> OnPickUpItem;
 
+
     [SerializeField]
     Item item = null;
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -26,6 +28,7 @@ public class PlayerColntroller : PlayerMovement
                 {
                     if (JumpOn) return;
 
+                    animation.ClearJump();
 
                     var velocity = rigidbody.velocity;
                     velocity.y = 0;

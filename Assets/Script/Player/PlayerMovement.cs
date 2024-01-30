@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 movementDirection = Vector3.zero;
     SpriteRenderer sprite;
+    protected AnimationContoller animation;
 
     AudioManager audioManager;
 
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         Secondjump = false;
         sprite = GetComponentInChildren<SpriteRenderer>();
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        animation = GetComponent<AnimationContoller>();
     }
 
     void FixedUpdate()
@@ -54,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
             JumpOn = false;
             Secondjump = true;
             rigidbody.AddForce(direction * jump, ForceMode2D.Impulse);
+
+            animation.FirstJump();
         }
         else if (Secondjump)
         {
@@ -63,6 +67,8 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = 0;
             rigidbody.velocity = velocity;
             rigidbody.AddForce(direction * (jump - 2), ForceMode2D.Impulse);
+
+            animation.SecondJump();
         }
     }
 
@@ -89,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
             audioManager.PlaySFX(audioManager.walkClip);
 
 
-        velocity.x = direction.x * 10; // x �ӵ� ����
+        velocity.x = direction.x * speed; // x �ӵ� ����
         velocity.y = rigidbody.velocity.y;
         rigidbody.velocity = velocity;
 

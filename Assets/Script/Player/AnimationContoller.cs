@@ -8,8 +8,8 @@ public class AnimationContoller : MonoBehaviour
     private PlayerColntroller controller;
 
     private static readonly int IsRun = Animator.StringToHash("IsRun");
-    private static readonly int Jump1 = Animator.StringToHash("Jump1");
-    private static readonly int Jump2 = Animator.StringToHash("Jump2");
+    private static readonly int Jump1 = Animator.StringToHash("IsJump1");
+    private static readonly int Jump2 = Animator.StringToHash("IsJump2");
 
     protected virtual void Awake()
     {
@@ -19,7 +19,6 @@ public class AnimationContoller : MonoBehaviour
     void Start()
     {
         controller.playerMove.OnMoveEvent += Move;
-        controller.playerMove.OnJumpEvent += Jump;
     }
 
     void Move(Vector2 obj)
@@ -27,10 +26,19 @@ public class AnimationContoller : MonoBehaviour
         animator.SetBool(IsRun, obj.magnitude > .5f);
     }
 
-    void Jump(Vector3 obj)
+    public void FirstJump()
     {
-        animator.SetBool(Jump1, controller.JumpOn);
+        animator.SetBool(Jump1, true);
+    }
 
-        animator.SetBool(Jump2, controller.Secondjump);
+    public void SecondJump()
+    {
+        animator.SetBool(Jump2, true);
+    }
+
+    public void ClearJump()
+    {
+        animator.SetBool(Jump1, false);
+        animator.SetBool(Jump2, false);
     }
 }
