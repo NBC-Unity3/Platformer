@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class PlayerColntroller : PlayerMovement
 {
-    // UI ∞ªΩ≈¿ª ¿ß«— ¿Ã∫•∆Æ
+    // UI Í∞±Ïã†ÏùÑ ÏúÑÌïú Ïù¥Î≤§Ìä∏
     public event Action<Item> OnPickUpItem;
+
 
     [SerializeField]
     Item item = null;
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -26,6 +28,7 @@ public class PlayerColntroller : PlayerMovement
                 {
                     if (JumpOn) return;
 
+                    animation.ClearJump();
 
                     var velocity = rigidbody.velocity;
                     velocity.y = 0;
