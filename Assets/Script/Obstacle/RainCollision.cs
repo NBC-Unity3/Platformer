@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class RainCollision : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class RainCollision : MonoBehaviour
         {
             if (coll.gameObject.tag == "Player")
             {
+                coll.gameObject.GetComponentInChildren<Animator>().enabled = false;
+                coll.gameObject.GetComponent<PlayerInput>().enabled = false;
+
                 if (this.gameObject.tag == "YouTube")
                     uiManager.endResult("유튜브의 알고리즘이 나를 현혹시킨다...");
 
