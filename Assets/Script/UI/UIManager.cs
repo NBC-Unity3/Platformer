@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour
     public Button masterMuteBtn, bgmMuteBtn, sfxMuteBtn;
     AudioManager audioManager;
 
-    public TextMeshProUGUI targetText;
+    public Text targetText;
     private float delay = 0.125f;
 
     void Start()
@@ -43,7 +43,6 @@ public class UIManager : MonoBehaviour
         setTime = 540.0f;
         max_distance = Vector3.Distance(player.transform.position, goal.transform.position);
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-        //endResult("TimeOut");
     }
 
     void Update()
@@ -62,7 +61,7 @@ public class UIManager : MonoBehaviour
         {
             Time.timeScale = 1f;
             if (!isEnd)
-                endResult("TimeOut");
+                endResult("퇴실버튼을 못눌러서 매니저님이 찾아왔다");
             isEnd = true;
         }
         setTimeTxt.text = Mathf.Floor(setTime / 60f).ToString().PadLeft(2, '0') + 
@@ -101,14 +100,14 @@ public class UIManager : MonoBehaviour
         settings.SetActive(false);
     }
 
-    public void endResult(string ending)
+    public void endResult(string endingComment)
     {
-        player.IsDestroyed();
-        result.SetActive(true);
-        StartCoroutine(textPrint(delay, "??? : 크크크.. 오늘도 TIL을 쓰게 만들어야겠군!"));
-        //resultTxt.text = "Press Any Key";
-        //if (Input.anyKey)
-        //    SceneManager.LoadScene("MainScene");
+        if (!isEnd)
+        {
+            result.SetActive(true);
+            StartCoroutine(textPrint(delay, endingComment));
+        }
+        isEnd = true;
     }
 
     public void getItem()
