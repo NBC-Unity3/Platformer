@@ -7,12 +7,15 @@ public class NagSpawner : MonoBehaviour
     public GameObject player;
     public GameObject prefab;
     public Transform parent;
+
+    private Sprite[] sprites;
     [SerializeField] private float minTime = 2;
     [SerializeField] private float maxTime = 4;
     private float cooltime;
     void Start()
     {
-        StartCoroutine(SpawnNag());
+        StartCoroutine(SpawnNag()); 
+        sprites = Resources.LoadAll<Sprite>("Images/TIL");
     }
 
     IEnumerator SpawnNag() {
@@ -23,6 +26,9 @@ public class NagSpawner : MonoBehaviour
             yield return new WaitForSeconds(cooltime);
 
             GameObject nag = Instantiate(prefab, parent);
+
+            nag.GetComponent<SpriteRenderer>().sprite = sprites[UnityEngine.Random.Range(0, sprites.Length)];
+            
             nag.AddComponent<PolygonCollider2D>();
             nag.transform.position = transform.position;
         }
