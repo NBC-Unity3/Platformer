@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
             audioManager.PlaySFX(audioManager.walkClip);
 
 
-        velocity.x = direction.x * 10; // x �ӵ� ����
+        velocity.x = direction.x * speed; // x �ӵ� ����
         velocity.y = rigidbody.velocity.y;
         rigidbody.velocity = velocity;
 
