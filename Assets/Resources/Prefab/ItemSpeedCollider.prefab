@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 6934536174806088203}
+  audioManager: {fileID: 0}
 --- !u!1 &4860124742094874415
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56290646e3038154a8faaf3d97fc9193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 30
+  duration: 6
   addSpeed: 3
 --- !u!212 &2439603331623799484
 SpriteRenderer:
