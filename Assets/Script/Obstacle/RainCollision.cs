@@ -17,7 +17,7 @@ public class RainCollision : MonoBehaviour
             if (coll.gameObject.tag == "Player")
             {
                 if (this.gameObject.tag == "YouTube")
-                    uiManager.endResult("유튜브의 알고리즘이 나를 현혹시킨다.");
+                    uiManager.endResult("유튜브의 알고리즘이 나를 현혹시킨다...");
 
                 Debug.Log($"{gameObject.tag} rain이랑 Player부딪힘");
             }
