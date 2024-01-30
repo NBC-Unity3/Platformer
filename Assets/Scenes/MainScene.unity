@@ -447,6 +447,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bed
       objectReference: {fileID: 0}
+    - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_TagString
+      value: Bed
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -537,6 +541,10 @@ PrefabInstance:
     - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
       propertyPath: m_Name
       value: Game(kongkong)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_TagString
+      value: Nintendo
       objectReference: {fileID: 0}
     - target: {fileID: 6590407116176326187, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
       propertyPath: m_Size.x
@@ -736,6 +744,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
       propertyPath: m_Name
+      value: Bed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_TagString
       value: Bed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4879,6 +4891,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game(kongkong)
       objectReference: {fileID: 0}
+    - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_TagString
+      value: Nintendo
+      objectReference: {fileID: 0}
     - target: {fileID: 6590407116176326187, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
       propertyPath: m_Size.x
       value: 1.4731781
@@ -4971,6 +4987,7 @@ Transform:
   - {fileID: 1172952762}
   - {fileID: 1026920171}
   - {fileID: 332276222}
+  - {fileID: 1723613285}
   m_Father: {fileID: 2016024702}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5050,6 +5067,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bed
       objectReference: {fileID: 0}
+    - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_TagString
+      value: Bed
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5077,7 +5098,7 @@ GameObject:
   - component: {fileID: 379391298}
   m_Layer: 0
   m_Name: Clear
-  m_TagString: Untagged
+  m_TagString: Clear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5719,6 +5740,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DropFly1
       objectReference: {fileID: 0}
+    - target: {fileID: 8960546692131802385, guid: 14e0af08c903e704b8580ac542dec036, type: 3}
+      propertyPath: m_TagString
+      value: Bed
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6257,6 +6282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game(kongkong)
       objectReference: {fileID: 0}
+    - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_TagString
+      value: Nintendo
+      objectReference: {fileID: 0}
     - target: {fileID: 6590407116176326187, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
       propertyPath: m_Size.x
       value: 1.4731781
@@ -6671,6 +6700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DropFly2
       objectReference: {fileID: 0}
+    - target: {fileID: 8960546692131802385, guid: 14e0af08c903e704b8580ac542dec036, type: 3}
+      propertyPath: m_TagString
+      value: Bed
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6762,6 +6795,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bed
       objectReference: {fileID: 0}
+    - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_TagString
+      value: Bed
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6840,6 +6877,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DropFly3
       objectReference: {fileID: 0}
+    - target: {fileID: 8960546692131802385, guid: 14e0af08c903e704b8580ac542dec036, type: 3}
+      propertyPath: m_TagString
+      value: Bed
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6864,20 +6905,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 356953092}
     m_Modifications:
     - target: {fileID: 91294585673463977, guid: 14e0af08c903e704b8580ac542dec036, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4127502
+      objectReference: {fileID: 0}
+    - target: {fileID: 91294585673463977, guid: 14e0af08c903e704b8580ac542dec036, type: 3}
       propertyPath: m_Size.y
-      value: 0.7395978
+      value: 0.53303623
+      objectReference: {fileID: 0}
+    - target: {fileID: 91294585673463977, guid: 14e0af08c903e704b8580ac542dec036, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.023468018
       objectReference: {fileID: 0}
     - target: {fileID: 91294585673463977, guid: 14e0af08c903e704b8580ac542dec036, type: 3}
       propertyPath: m_Offset.y
-      value: -0.1302011
+      value: -0.026920319
       objectReference: {fileID: 0}
     - target: {fileID: 91294585673463977, guid: 14e0af08c903e704b8580ac542dec036, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.024
+      value: 1.5628816
       objectReference: {fileID: 0}
     - target: {fileID: 91294585673463977, guid: 14e0af08c903e704b8580ac542dec036, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.024
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 6556214653189902406, guid: 14e0af08c903e704b8580ac542dec036, type: 3}
       propertyPath: m_RootOrder
@@ -6926,7 +6975,7 @@ PrefabInstance:
     - target: {fileID: 7152846529703754373, guid: 14e0af08c903e704b8580ac542dec036, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 16afdb4da592d28438007c6379ac8c95, type: 3}
+      objectReference: {fileID: 21300000, guid: a02447c8671a27147ac4b1f42aa92016, type: 3}
     - target: {fileID: 7152846529703754373, guid: 14e0af08c903e704b8580ac542dec036, type: 3}
       propertyPath: m_SortingOrder
       value: 4
@@ -6938,6 +6987,10 @@ PrefabInstance:
     - target: {fileID: 8960546692131802385, guid: 14e0af08c903e704b8580ac542dec036, type: 3}
       propertyPath: m_Name
       value: DropFly
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960546692131802385, guid: 14e0af08c903e704b8580ac542dec036, type: 3}
+      propertyPath: m_TagString
+      value: Nintendo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7028,6 +7081,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
       propertyPath: m_Name
+      value: Bed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_TagString
       value: Bed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7909,8 +7966,8 @@ MonoBehaviour:
   player: {fileID: 2037783866}
   prefab: {fileID: 4221444811288253453, guid: d4491764cf8ce2a4eae054ec2223c074, type: 3}
   parent: {fileID: 951150481}
-  minTime: 2
-  maxTime: 4
+  minTime: 1
+  maxTime: 3
 --- !u!1 &1000165075
 GameObject:
   m_ObjectHideFlags: 0
@@ -8457,6 +8514,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
       propertyPath: m_Name
+      value: Bed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_TagString
       value: Bed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9100,6 +9161,91 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1357067760595132787, guid: 369117e9f36b1884784c79690183a8ac, type: 3}
   m_PrefabInstance: {fileID: 1172952761}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1188524972
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 356953092}
+    m_Modifications:
+    - target: {fileID: 4067013654510055364, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067013654510055364, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 237.96413
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067013654510055364, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0195639
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067013654510055364, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067013654510055364, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067013654510055364, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067013654510055364, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067013654510055364, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067013654510055364, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067013654510055364, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067013654510055364, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359110498412841374, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a42ce0263f276084cac32fc668592aa0, type: 3}
+    - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_Name
+      value: Clear
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_TagString
+      value: Clear
+      objectReference: {fileID: 0}
+    - target: {fileID: 6590407116176326187, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_Size.x
+      value: 3.1721802
+      objectReference: {fileID: 0}
+    - target: {fileID: 6590407116176326187, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.012268066
+      objectReference: {fileID: 0}
+    - target: {fileID: 6590407116176326187, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6590407116176326187, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.1166667
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
 --- !u!1001 &1249313732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9175,6 +9321,10 @@ PrefabInstance:
     - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
       propertyPath: m_Name
       value: Game(kongkong)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_TagString
+      value: Nintendo
       objectReference: {fileID: 0}
     - target: {fileID: 6590407116176326187, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
       propertyPath: m_Size.x
@@ -9288,6 +9438,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
       propertyPath: m_Name
+      value: Bed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_TagString
       value: Bed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -17529,6 +17683,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1357067760595132787, guid: 369117e9f36b1884784c79690183a8ac, type: 3}
   m_PrefabInstance: {fileID: 1702694161}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1723613285 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4067013654510055364, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+  m_PrefabInstance: {fileID: 1188524972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1775589401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18751,6 +18910,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bed
       objectReference: {fileID: 0}
+    - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_TagString
+      value: Bed
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19143,7 +19306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037783866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4, y: -3.21, z: 0}
+  m_LocalPosition: {x: 98.45, y: 4.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19238,6 +19401,10 @@ PrefabInstance:
     - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
       propertyPath: m_Name
       value: Game(kongkong)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_TagString
+      value: Nintendo
       objectReference: {fileID: 0}
     - target: {fileID: 6590407116176326187, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
       propertyPath: m_Size.x
@@ -19519,6 +19686,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
       propertyPath: m_Name
+      value: Bed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
+      propertyPath: m_TagString
       value: Bed
       objectReference: {fileID: 0}
     m_RemovedComponents: []

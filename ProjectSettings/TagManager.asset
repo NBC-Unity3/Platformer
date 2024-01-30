@@ -12,6 +12,10 @@ TagManager:
   - Audio
   - MapOut
   - Nag
+  - Clear
+  - Bed
+  - Nintendo
+  - YouTube
   layers:
   - Default
   - TransparentFX
