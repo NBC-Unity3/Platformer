@@ -23425,7 +23425,7 @@ MonoBehaviour:
   bgmMuteBtn: {fileID: 5879248331085159225}
   sfxMuteBtn: {fileID: 6940331297797273866}
   targetText: {fileID: 8487190973427038186}
-  TimeScaile: 5
+  TimeScaile: 7.5
 --- !u!224 &6727491898966855105
 RectTransform:
   m_ObjectHideFlags: 0
