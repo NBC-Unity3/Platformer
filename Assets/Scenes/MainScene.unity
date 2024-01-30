@@ -588,6 +588,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 356953092}
     m_Modifications:
+    - target: {fileID: 640160026659660577, guid: d585562dc45ce70428b8676f3a63e052, type: 3}
+      propertyPath: m_Size.x
+      value: 2.4913635
+      objectReference: {fileID: 0}
+    - target: {fileID: 640160026659660577, guid: d585562dc45ce70428b8676f3a63e052, type: 3}
+      propertyPath: m_Size.y
+      value: 4.8680453
+      objectReference: {fileID: 0}
+    - target: {fileID: 640160026659660577, guid: d585562dc45ce70428b8676f3a63e052, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.74568176
+      objectReference: {fileID: 0}
+    - target: {fileID: 640160026659660577, guid: d585562dc45ce70428b8676f3a63e052, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.9340227
+      objectReference: {fileID: 0}
     - target: {fileID: 1027746121757247303, guid: d585562dc45ce70428b8676f3a63e052, type: 3}
       propertyPath: max
       value: 
@@ -1011,11 +1027,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19f3fd6e3d780149a4c40b25d7e0299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVertical: 0
+  isVertical: 1
   rightMax: 0
   leftMax: 0
   upMax: 0
-  downMax: 0
+  downMax: 10
   speed: 3
 --- !u!1 &105284827
 GameObject:
@@ -5634,10 +5650,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19f3fd6e3d780149a4c40b25d7e0299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVertical: 0
+  isVertical: 1
   rightMax: 0
   leftMax: 0
-  upMax: 0
+  upMax: 10
   downMax: 0
   speed: 3
 --- !u!1 &435242836
@@ -7882,11 +7898,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19f3fd6e3d780149a4c40b25d7e0299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVertical: 0
+  isVertical: 1
   rightMax: 0
   leftMax: 0
   upMax: 0
-  downMax: 0
+  downMax: 10
   speed: 3
 --- !u!1 &951150480
 GameObject:
@@ -19306,7 +19322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037783866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 98.45, y: 4.76, z: 0}
+  m_LocalPosition: {x: 39.73, y: 2.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24533,7 +24549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &8959870744336217332
 GameObject:
   m_ObjectHideFlags: 0
