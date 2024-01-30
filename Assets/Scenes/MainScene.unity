@@ -8455,6 +8455,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemBarriorCollider
       objectReference: {fileID: 0}
+    - target: {fileID: 8462721826065400208, guid: 66ca844425a11634fa3402f5573879f8, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19429,7 +19433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037783866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 197.57, y: -0.38, z: 0}
+  m_LocalPosition: {x: 38.96, y: 2.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
