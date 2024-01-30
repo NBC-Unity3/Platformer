@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,9 +14,9 @@ public class RainCollision : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "JumpGround" || coll.gameObject.tag == "Player"
-            || coll.gameObject.tag == "MapOut" || coll.gameObject.tag == "Nag"
-            || coll.gameObject.tag == "Bed")
+        string[] tags = { "JumpGround", "Player", "MapOut", "Nag", "Bed" };
+
+        if(tags.Contains(coll.gameObject.tag))
         {
             if (coll.gameObject.tag == "Player")
             {
