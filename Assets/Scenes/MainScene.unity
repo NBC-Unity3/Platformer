@@ -17852,7 +17852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
       propertyPath: m_Name
-      value: MapOut
+      value: MapOutBox
       objectReference: {fileID: 0}
     - target: {fileID: 5800102766899560360, guid: 59091e2718a33464e85d8d7c03cdca41, type: 3}
       propertyPath: m_TagString
