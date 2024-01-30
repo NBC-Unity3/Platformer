@@ -1031,7 +1031,7 @@ MonoBehaviour:
   rightMax: 0
   leftMax: 0
   upMax: 0
-  downMax: -10
+  downMax: -8
   speed: 4.5
 --- !u!1 &105284827
 GameObject:
@@ -5609,7 +5609,7 @@ MonoBehaviour:
   isVertical: 1
   rightMax: 0
   leftMax: 0
-  upMax: 10
+  upMax: 8
   downMax: 0
   speed: 4.5
 --- !u!1001 &437949314
@@ -7105,7 +7105,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 0.5000001}
+  m_Offset: {x: -0.013912946, y: 0.5000001}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -7116,7 +7116,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 1}
+  m_Size: {x: 1.9721737, y: 1}
   m_EdgeRadius: 0
 --- !u!251 &909589139
 PlatformEffector2D:
@@ -7208,16 +7208,6 @@ Tilemap:
   - first: {x: 0, y: 0, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 1, y: 0, z: 0}
-    second:
-      serializedVersion: 2
       m_TileIndex: 2
       m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
@@ -7229,19 +7219,19 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: c6dab2ee3dfd8a54fa3196daa4cfca44, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 9c34ae6fbc41302478fd80572a35594d, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 8df55c17591eff440972dd1cdbbf572b, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 1984790112, guid: 483a5389b00efe9419935f46e625d61b, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 101909947, guid: 483a5389b00efe9419935f46e625d61b, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -1018311422, guid: 483a5389b00efe9419935f46e625d61b, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data:
       e00: 1
       e01: 0
@@ -7260,7 +7250,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -7556,11 +7546,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isVertical: 0
-  rightMax: 0
+  rightMax: 10
   leftMax: 0
   upMax: 0
   downMax: 0
-  speed: 3
+  speed: 4.5
 --- !u!1 &944640463
 GameObject:
   m_ObjectHideFlags: 0
@@ -7816,7 +7806,7 @@ MonoBehaviour:
   rightMax: 0
   leftMax: 0
   upMax: 0
-  downMax: -10
+  downMax: -8
   speed: 4.5
 --- !u!1 &951150480
 GameObject:
@@ -18118,12 +18108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19f3fd6e3d780149a4c40b25d7e0299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVertical: 0
+  isVertical: 1
   rightMax: 0
   leftMax: 0
-  upMax: 0
+  upMax: 6.5
   downMax: 0
-  speed: 3
+  speed: 4.5
 --- !u!1 &1868449003
 GameObject:
   m_ObjectHideFlags: 0
