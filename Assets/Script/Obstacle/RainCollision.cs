@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class RainCollision : MonoBehaviour
 {
@@ -12,16 +14,22 @@ public class RainCollision : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "JumpGround" || coll.gameObject.tag == "Player" || coll.gameObject.tag == "MapOut")
-        {
-            Destroy(gameObject);
+        string[] tags = { "JumpGround", "Player", "MapOut", "Nag", "Bed" };
 
+        if(tags.Contains(coll.gameObject.tag))
+        {
             if (coll.gameObject.tag == "Player")
             {
-                //TODO
-                Debug.Log("Player부딪힘");
-                uiManager.endResult("퇴실버튼을 못눌러서 매니저님이 찾아왔다");
+                coll.gameObject.GetComponentInChildren<Animator>().enabled = false;
+                coll.gameObject.GetComponent<PlayerInput>().enabled = false;
+
+                if (this.gameObject.tag == "YouTube")
+                    uiManager.endResult("유튜브의 알고리즘이 나를 현혹시킨다...");
+
+                Debug.Log($"{gameObject.tag} rain이랑 Player부딪힘");
             }
+
+            Destroy(gameObject);
         }
     }
 }

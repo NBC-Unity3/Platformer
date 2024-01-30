@@ -7,7 +7,7 @@ public class PlayerColntroller : PlayerMovement
 {
     // UI 갱신을 위한 이벤트
     public event Action<Item> OnPickUpItem;
-
+    public event Action OnConsumeItem;
 
     [SerializeField]
     Item item = null;
@@ -15,9 +15,10 @@ public class PlayerColntroller : PlayerMovement
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Ground")) return;
+
         if (collision.gameObject.CompareTag("JumpGround"))
         {
-
             // 충돌 지점이 하나 이상 있는 경우
             if (collision.contacts.Length > 0)
             {
@@ -39,6 +40,35 @@ public class PlayerColntroller : PlayerMovement
                 }
             }
         }
+        else
+        {
+            if (JumpOn) return;
+
+            animation.ClearJump();
+
+            var velocity = rigidbody.velocity;
+            velocity.y = 0;
+            rigidbody.velocity = velocity;
+
+            JumpOn = true;
+            Secondjump = false;
+        }
+
+
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("JumpGround"))
+        {
+            Invoke("CleatJump", 0.01f);
+        }
+    }
+
+    void CleatJump()
+    {
+        JumpOn = false;
+        Secondjump = true;
     }
 
 
@@ -66,5 +96,9 @@ public class PlayerColntroller : PlayerMovement
     {
         item?.ConsumeItem(this.gameObject);
         item = null;
+
+        OnConsumeItem?.Invoke();
     }
+
+
 }

@@ -35,6 +35,7 @@ public class UIManager : MonoBehaviour
     AudioManager audioManager;
 
     public Text targetText;
+    public float TimeScaile;
     private float delay = 0.125f;
 
     void Start()
@@ -43,6 +44,10 @@ public class UIManager : MonoBehaviour
         setTime = 540.0f;
         max_distance = Vector3.Distance(player.transform.position, goal.transform.position);
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
+        player.GetComponent<PlayerColntroller>().OnPickUpItem += getItem;
+        player.GetComponent<PlayerColntroller>().OnConsumeItem += consumeItem;
+        this.item.GetComponent<Image>().enabled = false;
     }
 
     void Update()
@@ -54,7 +59,7 @@ public class UIManager : MonoBehaviour
         //시간UI 업데이트
         if (setTime < 1260.0f)
         {
-            setTime += Time.deltaTime * 20;
+            setTime += Time.deltaTime * TimeScaile;
         }
 
         else if (setTime >= 1260.0f && !isEnd)
@@ -110,10 +115,19 @@ public class UIManager : MonoBehaviour
         isEnd = true;
     }
 
-    public void getItem()
+    public void getItem(Item item)
     {
-        //item.sprite 변경..
+        this.item.GetComponent<Image>().enabled = true;
+        this.item.GetComponent<Image>().sprite = item.itemSprite.sprite;
     }
+
+
+    public void consumeItem() 
+    {
+        this.item.GetComponent<Image>().enabled = false;
+        this.item.GetComponent<Image>().sprite = null;
+    }
+
     public void ChangeBtnColor(Button btn, bool mute)
     {
         if (mute == false)

@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
             rigidbody.velocity = velocity;
             rigidbody.AddForce(direction * (jump - 2), ForceMode2D.Impulse);
 
-            animation.SecondJump();
+            animation.SecondJump(rigidbody);
         }
     }
 
@@ -97,11 +97,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        velocity.x = direction.x * speed; // x �ӵ� ����
+        velocity.x = direction.x * speed; 
         velocity.y = rigidbody.velocity.y;
         rigidbody.velocity = velocity;
 
-        //��������Ʈ ����
+
+
         if (velocity.x < 0)
         {
             sprite.flipX = true;
