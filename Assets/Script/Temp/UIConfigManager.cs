@@ -73,15 +73,19 @@ public class UIConfigManager : MonoBehaviour
     {
         if (masterMute == false)
         {
-            masterMuteButton.GetComponent<Image>().color = Color.red;
+            masterMuteButton.image.color = Color.red;
             PlayerPrefs.SetInt("MasterMute", 1);
             masterMute = true;
+            if(!bgmMute) { MuteBGMVolume(); }
+            if(!sfxMute) { MuteSFXVolume(); }
         }
         else
         {
-            masterMuteButton.GetComponent<Image>().color = Color.white;
+            masterMuteButton.image.color = Color.white;
             PlayerPrefs.SetInt("MasterMute", 0);
             masterMute = false;
+            if (bgmMute) { MuteBGMVolume(); }
+            if (sfxMute) { MuteSFXVolume(); }
         }
         SoundManager.Instance.SetMasterMute(masterMute);
     }
@@ -89,13 +93,13 @@ public class UIConfigManager : MonoBehaviour
     {
         if (bgmMute == false)
         {
-            bgmMuteButton.GetComponent<Image>().color = Color.red;
+            bgmMuteButton.image.color = Color.red;
             PlayerPrefs.SetInt("BgmMute", 1);
             bgmMute = true;
         }
         else
         {
-            bgmMuteButton.GetComponent<Image>().color = Color.white;
+            bgmMuteButton.image.color = Color.white;
             PlayerPrefs.SetInt("BgmMute", 0);
             bgmMute = false;
         }
@@ -105,13 +109,13 @@ public class UIConfigManager : MonoBehaviour
     {
         if (sfxMute == false)
         {
-            sfxMuteButton.GetComponent<Image>().color = Color.red;
+            sfxMuteButton.image.color = Color.red;
             PlayerPrefs.SetInt("SfxMute", 1);
             sfxMute = true;
         }
         else
         {
-            sfxMuteButton.GetComponent<Image>().color = Color.white;
+            sfxMuteButton.image.color = Color.white;
             PlayerPrefs.SetInt("SfxMute", 0);
             sfxMute = false;
         }

@@ -99,6 +99,4 @@ public class PlayerColntroller : PlayerMovement
 
         OnConsumeItem?.Invoke();
     }
-
-
 }

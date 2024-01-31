@@ -19,8 +19,6 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer sprite;
     protected AnimationContoller animation;
 
-    AudioManager audioManager;
-
     private void Awake()
     {
         playerMove = GetComponent<InputController>();
@@ -34,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
         JumpOn = false;
         Secondjump = false;
         sprite = GetComponentInChildren<SpriteRenderer>();
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         animation = GetComponent<AnimationContoller>();
     }
 
@@ -52,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (JumpOn)
         {
-            audioManager.PlaySFX(audioManager.jumpClip);
+            SoundManager.Instance.PlaySFX("Jump");
             JumpOn = false;
             Secondjump = true;
             rigidbody.AddForce(direction * jump, ForceMode2D.Impulse);
@@ -61,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Secondjump)
         {
-            audioManager.PlaySFX(audioManager.jumpClip);
+            SoundManager.Instance.PlaySFX("Jump");
             Secondjump = false;
             var velocity = rigidbody.velocity;
             velocity.y = 0;
@@ -84,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-
         if (direction.x == 0)
         {
             velocity.x = 0;
@@ -93,14 +89,13 @@ public class PlayerMovement : MonoBehaviour
         }
         else if( direction.x != 0 && JumpOn)
         {
-            audioManager.PlaySFX(audioManager.walkClip);
+            // SoundManager.Instance.PlaySFX("Walk");
         }
 
 
         velocity.x = direction.x * speed; 
         velocity.y = rigidbody.velocity.y;
         rigidbody.velocity = velocity;
-
 
 
         if (velocity.x < 0)
