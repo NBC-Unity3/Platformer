@@ -1267,8 +1267,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 1083207241}
+        m_TargetAssemblyTypeName: UIConfigManager, Assembly-CSharp
         m_MethodName: MuteBGMVolume
         m_Mode: 1
         m_Arguments:
@@ -1757,8 +1757,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 1083207241}
+        m_TargetAssemblyTypeName: UIConfigManager, Assembly-CSharp
         m_MethodName: MuteMasterVolume
         m_Mode: 1
         m_Arguments:
@@ -3368,6 +3368,9 @@ MonoBehaviour:
   bgmSlider: {fileID: 1195190568}
   sfxSlider: {fileID: 1670654113}
   masterSlider: {fileID: 610766580}
+  bgmMuteButton: {fileID: 446966891}
+  sfxMuteButton: {fileID: 1932289247}
+  masterMuteButton: {fileID: 588453653}
 --- !u!1 &1123513443
 GameObject:
   m_ObjectHideFlags: 0
@@ -7046,8 +7049,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 1083207241}
+        m_TargetAssemblyTypeName: UIConfigManager, Assembly-CSharp
         m_MethodName: MuteSFXVolume
         m_Mode: 1
         m_Arguments:

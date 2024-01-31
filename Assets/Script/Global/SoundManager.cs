@@ -86,9 +86,9 @@ public class SoundManager : MonoBehaviour
 
         CachingNames();
 
-        _bgmVolumeScale = PlayerPrefs.GetFloat("BGMVolume", 1.0f);
-        _sfxVolumeScale = PlayerPrefs.GetFloat("SFXVolume", 1.0f);
-        _masterVolumeScale = PlayerPrefs.GetFloat("MasterVolume", 1.0f);
+        _bgmVolumeScale = PlayerPrefs.GetFloat("BGMVolume");
+        _sfxVolumeScale = PlayerPrefs.GetFloat("SFXVolume");
+        _masterVolumeScale = PlayerPrefs.GetFloat("MasterVolume");
 
         sfxList = new List<(string, AudioClip)>(MAX_SFX_CACHE_SIZE);
 
@@ -209,18 +209,19 @@ public class SoundManager : MonoBehaviour
         sfxList.Clear();
     }
 
-    public void SetBGMMute() 
+    public void SetBGMMute(bool mute) 
     {
-    
+        bgmSource.mute = mute;
     }
 
-    public void SetSFXMute() 
+    public void SetSFXMute(bool mute) 
     {
-    
+        sfxSource.mute = mute;
     }
 
-    public void SetMasterMute() 
+    public void SetMasterMute(bool mute) 
     {
-        
+        SetBGMMute(mute);
+        SetSFXMute(mute);
     }
 }
