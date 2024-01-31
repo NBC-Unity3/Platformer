@@ -53,28 +53,42 @@ public class SoundManager : MonoBehaviour
     string SFX_PATH { get { return RESOURCES_SOUND_PATH + "SFX/"; } }
 
     private float _bgmVolumeScale = 1;
-    public float bgmVolumeScale { get { return _bgmVolumeScale; } set {
+    public float bgmVolumeScale { get { return _bgmVolumeScale * masterVolumeScale; } set {
             _bgmVolumeScale = value;
             PlayerPrefs.SetFloat("BGMVolume", bgmVolumeScale);
-            bgmSource.volume = _bgmVolumeScale;
+            bgmSource.volume = _bgmVolumeScale * masterVolumeScale;
         } }
 
 
     private float _sfxVolumeScale = 1;
-    public float sfxVolumeScale { get { return _sfxVolumeScale; } set {
+    public float sfxVolumeScale { get { return _sfxVolumeScale * masterVolumeScale; } set {
             _sfxVolumeScale = value;
             PlayerPrefs.SetFloat("SFXVolume", _sfxVolumeScale);
-            sfxSource.volume = _sfxVolumeScale;
+            sfxSource.volume = _sfxVolumeScale * masterVolumeScale;
         } }
-    
+
+    private float _masterVolumeScale = 1;
+    public float masterVolumeScale
+    {
+        get { return _masterVolumeScale; }
+        set
+        {
+            _masterVolumeScale = value;
+            PlayerPrefs.SetFloat("MasterVolume", _masterVolumeScale);
+            bgmSource.volume = _bgmVolumeScale * _masterVolumeScale;
+            sfxSource.volume = _sfxVolumeScale * _masterVolumeScale;
+        }
+    }
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
 
         CachingNames();
 
-        _bgmVolumeScale = PlayerPrefs.GetFloat("BGMVolume");
-        _sfxVolumeScale = PlayerPrefs.GetFloat("SFXVolume");
+        _bgmVolumeScale = PlayerPrefs.GetFloat("BGMVolume", 1.0f);
+        _sfxVolumeScale = PlayerPrefs.GetFloat("SFXVolume", 1.0f);
+        _masterVolumeScale = PlayerPrefs.GetFloat("MasterVolume", 1.0f);
 
         sfxList = new List<(string, AudioClip)>(MAX_SFX_CACHE_SIZE);
 
@@ -193,5 +207,20 @@ public class SoundManager : MonoBehaviour
     public void ClearSFXList() 
     {
         sfxList.Clear();
+    }
+
+    public void SetBGMMute() 
+    {
+    
+    }
+
+    public void SetSFXMute() 
+    {
+    
+    }
+
+    public void SetMasterMute() 
+    {
+        
     }
 }

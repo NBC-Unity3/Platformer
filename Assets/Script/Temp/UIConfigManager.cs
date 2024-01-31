@@ -6,18 +6,20 @@ using UnityEngine.UI;
 public class UIConfigManager : MonoBehaviour
 {
     [SerializeField]
-    Button backButton;
-
-    [SerializeField]
     Slider bgmSlider;
 
     [SerializeField]
     Slider sfxSlider;
 
+    [SerializeField]
+    Slider masterSlider;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        bgmSlider.value = SoundManager.Instance.bgmVolumeScale;
+        sfxSlider.value = SoundManager.Instance.sfxVolumeScale;
+        masterSlider.value = SoundManager.Instance.masterVolumeScale;
     }
 
     // Update is called once per frame
@@ -41,7 +43,13 @@ public class UIConfigManager : MonoBehaviour
     public void OnSFXSliderRelease() 
     {
         SoundManager.Instance.PlaySFX("UISelect");
-        SoundManager.Instance.sfxVolumeScale = bgmSlider.value;
+        SoundManager.Instance.sfxVolumeScale = sfxSlider.value;
+    }
+
+    public void OnMasterSliderRelease() 
+    {
+        SoundManager.Instance.PlaySFX("UISelect");
+        SoundManager.Instance.masterVolumeScale = masterSlider.value;
     }
 
     private void OnEnable()

@@ -26,26 +26,30 @@ public class TitleSceneManager : MonoBehaviour
     [SerializeField]
     GameObject titleUI;
 
+    [SerializeField]
+    GameObject configUI;
+
     private void Start()
     {
         // todo : BGM 켜기
+        SoundManager.Instance.PlayBGM("Title");
     }
 
 
-    public void EnterGame() 
+    public void EnterGame()
     {
         horizontalGridScroller1.scrollSpeed = 0;
         horizontalGridScroller2.scrollSpeed = 0;
 
-        // todo : BGM 끄기
+        SoundManager.Instance.PauseBGM();
 
         StartCoroutine("Entering");
     }
 
-    IEnumerator Entering() 
+    IEnumerator Entering()
     {
         float time = 0;
-        while (time < 1.9f) 
+        while (time < 1.9f)
         {
             playerCharacter.transform.position += new Vector3(playerMoveSpeed * Time.deltaTime, 0, 0);
             blackGradient.transform.position -= new Vector3(gradientMoveSpeed * Time.deltaTime, 0, 0);
@@ -56,13 +60,23 @@ public class TitleSceneManager : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
-    public void DisableTitleUI() 
+    public void DisableTitleUI()
     {
         titleUI.SetActive(false);
     }
 
-    public void EnableTitleUI() 
+    public void EnableTitleUI()
     {
         titleUI.SetActive(true);
+    }
+
+    public void DisableConfigUI()
+    {
+        configUI.SetActive(false);
+    }
+
+    public void EnableConfigUI() 
+    {
+        configUI.SetActive(true);
     }
 }

@@ -10,21 +10,21 @@ public class TitleSceneUIManager : MonoBehaviour
 
     public void OnClickEnter() 
     {
-        // todo : SFX 넣기
+        SoundManager.Instance.PlaySFX("UISelect");
         titleSceneManager.EnterGame();
         titleSceneManager.DisableTitleUI();
     }
 
     public void OnClickSettings() 
     {
-        // todo : SFX 넣기
+        SoundManager.Instance.PlaySFX("UISelect");
         titleSceneManager.DisableTitleUI();
-        // todo : 설정창 띄우기
+        titleSceneManager.EnableConfigUI();
     }
 
     public void OnClickExit() 
     {
-        // todo : SFX 넣기
+        SoundManager.Instance.PlaySFX("UISelect");
 
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
