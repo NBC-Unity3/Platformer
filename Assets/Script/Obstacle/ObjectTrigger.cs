@@ -37,6 +37,8 @@ public class ObjectTrigger : MonoBehaviour
             {
                 if (myObstacle.choiceObject.activeSelf == false)
                     Invoke("WaitDrop", myObstacle.wait);
+
+                myObstacle.triggerObject.SetActive(false);
             }
 
             if (myObstacle.choice == ModeChoice.Mode.RandomRain)
@@ -83,7 +85,7 @@ public class ObjectTrigger : MonoBehaviour
 
     public void WaitDrop()
     {
-        myObstacle.choiceObject.SetActive(true);
+        gameObject.GetComponent<Obstacle>().choiceObject.SetActive(true);
         Destroy(myObstacle.triggerObject);
     }
 }

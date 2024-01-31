@@ -8,6 +8,8 @@ public class RainCollision : MonoBehaviour
 {
     UIManager uiManager;
 
+    private string youtubeStr = "유튜브의 알고리즘이 나를 현혹시킨다...\n12시간동안 유튜브에서 헤어나오지 못했다...";
+
     private void Start()
     {
         uiManager = GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>();
@@ -24,7 +26,7 @@ public class RainCollision : MonoBehaviour
                 coll.gameObject.GetComponent<PlayerInput>().enabled = false;
 
                 if (this.gameObject.tag == "YouTube")
-                    uiManager.endResult("유튜브의 알고리즘이 나를 현혹시킨다...");
+                    uiManager.endResult(youtubeStr);
 
                 Debug.Log($"{gameObject.tag} rain이랑 Player부딪힘");
             }
