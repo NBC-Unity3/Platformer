@@ -80,14 +80,16 @@ public class UIManager : MonoBehaviour
             if (isPause)
             {
                 Time.timeScale = 0.0f;
+                Time.fixedDeltaTime = Single.MaxValue;
                 settings.SetActive(true);
             }
             else
             {
                 Time.timeScale = 1.0f;
+                Time.fixedDeltaTime = 0.02f;
                 settings.SetActive(false);
             }
-            Time.fixedDeltaTime = 0.02f * Time.timeScale;
+            // Time.fixedDeltaTime = 0.02f * Time.timeScale;
         }
     }
 
@@ -102,6 +104,7 @@ public class UIManager : MonoBehaviour
         audioManager.PlaySFX(audioManager.uiSelectClip);
         isPause = false;
         Time.timeScale = 1.0f;
+        Time.fixedDeltaTime = 0.02f;
         settings.SetActive(false);
     }
 
