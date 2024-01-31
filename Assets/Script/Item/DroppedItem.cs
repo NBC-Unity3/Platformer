@@ -12,9 +12,6 @@ public class DroppedItem : MonoBehaviour
     [SerializeField]
     Item item;
 
-    [SerializeField]
-    AudioManager audioManager;
-
     private void Awake()
     {
         
@@ -22,7 +19,7 @@ public class DroppedItem : MonoBehaviour
 
     private void Start()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,7 +27,7 @@ public class DroppedItem : MonoBehaviour
         if (collision.CompareTag("Player")) 
         {
             // 효과음
-            audioManager.PlaySFX(audioManager.uiSelectClip);
+            SoundManager.Instance.PlaySFX("UISelect");
 
             // 아이템 습득 처리
             collision.GetComponent<PlayerColntroller>()?.CallOnPickUpItem(item);

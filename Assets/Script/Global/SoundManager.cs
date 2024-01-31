@@ -52,7 +52,7 @@ public class SoundManager : MonoBehaviour
     string BGM_PATH { get { return RESOURCES_SOUND_PATH + "BGM/"; } }
     string SFX_PATH { get { return RESOURCES_SOUND_PATH + "SFX/"; } }
 
-    private float _bgmVolumeScale = 1;
+    private float _bgmVolumeScale;
     public float bgmVolumeScale { get { return _bgmVolumeScale * masterVolumeScale; } set {
             _bgmVolumeScale = value;
             PlayerPrefs.SetFloat("BGMVolume", bgmVolumeScale);
@@ -60,14 +60,14 @@ public class SoundManager : MonoBehaviour
         } }
 
 
-    private float _sfxVolumeScale = 1;
+    private float _sfxVolumeScale;
     public float sfxVolumeScale { get { return _sfxVolumeScale * masterVolumeScale; } set {
             _sfxVolumeScale = value;
             PlayerPrefs.SetFloat("SFXVolume", _sfxVolumeScale);
             sfxSource.volume = _sfxVolumeScale * masterVolumeScale;
         } }
 
-    private float _masterVolumeScale = 1;
+    private float _masterVolumeScale;
     public float masterVolumeScale
     {
         get { return _masterVolumeScale; }
@@ -86,10 +86,6 @@ public class SoundManager : MonoBehaviour
 
         CachingNames();
 
-        _bgmVolumeScale = PlayerPrefs.GetFloat("BGMVolume");
-        _sfxVolumeScale = PlayerPrefs.GetFloat("SFXVolume");
-        _masterVolumeScale = PlayerPrefs.GetFloat("MasterVolume");
-
         sfxList = new List<(string, AudioClip)>(MAX_SFX_CACHE_SIZE);
 
         if (GameObject.Find("BGMPlayer") == null) 
@@ -104,6 +100,10 @@ public class SoundManager : MonoBehaviour
             sfxSource = new GameObject("SFXPlayer").AddComponent<AudioSource>();
             sfxSource.transform.parent = transform;
         }
+
+        bgmVolumeScale = PlayerPrefs.GetFloat("BGMVolume");
+        sfxVolumeScale = PlayerPrefs.GetFloat("SFXVolume");
+        masterVolumeScale = PlayerPrefs.GetFloat("MasterVolume");
     }
 
 

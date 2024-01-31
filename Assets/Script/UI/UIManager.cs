@@ -1,15 +1,9 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using static UnityEngine.EventSystems.EventTrigger;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
-using UnityEngine.U2D;
-using Unity.VisualScripting;
+using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [Header ("UI")]
@@ -17,7 +11,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI distanceTxt;
     [SerializeField] TextMeshProUGUI resultDistanceTxt;
 
-    
     [SerializeField] GameObject item;
     [SerializeField] GameObject settings;
     [SerializeField] GameObject result;
@@ -32,7 +25,6 @@ public class UIManager : MonoBehaviour
     private float setTime;
 
     public Button masterMuteBtn, bgmMuteBtn, sfxMuteBtn;
-    AudioManager audioManager;
 
     public Text targetText;
     public float TimeScaile;
@@ -43,11 +35,12 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1.0f;
         setTime = 540.0f;
         max_distance = Vector3.Distance(player.transform.position, goal.transform.position);
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
         player.GetComponent<PlayerColntroller>().OnPickUpItem += getItem;
         player.GetComponent<PlayerColntroller>().OnConsumeItem += consumeItem;
         this.item.GetComponent<Image>().enabled = false;
+
+        SoundManager.Instance.PlayBGM("Game");
     }
 
     void Update()
@@ -95,13 +88,15 @@ public class UIManager : MonoBehaviour
 
     public void sceneChangeBtn(string scene)
     {
-        audioManager.PlaySFX(audioManager.uiSelectClip);
+        Time.timeScale = 1.0f;
+        Time.fixedDeltaTime = 0.02f;
+        SoundManager.Instance.PlaySFX("UISelect");
         SceneManager.LoadScene(scene);
     }
 
     public void resumeBtn()
     {
-        audioManager.PlaySFX(audioManager.uiSelectClip);
+        SoundManager.Instance.PlaySFX("Walk");
         isPause = false;
         Time.timeScale = 1.0f;
         Time.fixedDeltaTime = 0.02f;
