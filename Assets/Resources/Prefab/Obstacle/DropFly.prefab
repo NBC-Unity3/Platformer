@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7152846529703754373}
   - component: {fileID: 91294585673463977}
   - component: {fileID: 7963516622101602807}
-  - component: {fileID: -4505561008244089521}
+  - component: {fileID: -6345859596824932534}
   m_Layer: 0
   m_Name: DropFly
   m_TagString: Obstacle
@@ -159,19 +159,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 1
---- !u!114 &-4505561008244089521
+--- !u!114 &-6345859596824932534
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8960546692131802385}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38816a08cc578ca4396cee6540a4e07d, type: 3}
+  m_Script: {fileID: 11500000, guid: 273f31cdf5b34ef45acf6f57b8c01abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choice: 0
-  choiceObject: {fileID: 0}
-  triggerObject: {fileID: 0}
-  gravity: 0
+  choice: 1
